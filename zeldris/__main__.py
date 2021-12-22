@@ -112,15 +112,14 @@ buttons = [
     [
         InlineKeyboardButton(
                                 text="➕ ᴀᴅᴅ ᴍᴇ! ➕",
-                                url="t.me/{}?startgroup=true".format(
-                                    context.bot.username,
+                                url="t.me/Voilet_probot?startgroup=true"
                                 ),
                             ),
                         ],
                         [
                             InlineKeyboardButton(
                                 text="⛩ sᴜᴘᴘᴏʀᴛ ⛩",
-                                url=f"https://t.me/{SUPPORT_CHAT}",
+                                url=f"https://t.me/villainevil_support",
                             ),
                             InlineKeyboardButton(
                                 text="🚦 ᴜᴘᴅᴀᴛᴇs 🚦",

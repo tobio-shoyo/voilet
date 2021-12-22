@@ -165,19 +165,17 @@ def info(update, context):
         disaster_level_present = True
     elif user.id in SUPPORT_USERS:
         text += (
-            "\n\n This user is the <b>'Dragon'</b>""
+            "\n\n This user is the <b>'Dragon'</b>"
         )
         disaster_level_present = True
     elif user.id in WHITELIST_USERS:
         text += (
-            "\n\n This user is the <b>'Assassin'</b>""
+            "\n\n This user is the <b>'Assassin'</b>"
         )
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' [<a href="https://t.me/DABI_UPDATES/9">?</a>]'.format(
-            bot.username,
-        )
+        text += ' [<a href="https://t.me/DABI_UPDATES/9">?</a>]'
 
     try:
         memstatus = chat.get_member(user.id).status

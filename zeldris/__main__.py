@@ -114,7 +114,6 @@ buttons = [
                                 text="➕ ᴀᴅᴅ ᴍᴇ! ➕",
                                 url="t.me/Voilet_probot?startgroup=true"
                                 ),
-                            ),
                         ],
                         [
                             InlineKeyboardButton(

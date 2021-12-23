@@ -23,7 +23,7 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, Filters
 from telegram.utils.helpers import mention_html
 
-from zeldris import dispatcher
+from zeldris import dispatcher, DEV_USERS
 from zeldris.modules.connection import connected
 from zeldris.modules.disable import DisableAbleCommandHandler
 from zeldris.modules.helper_funcs.admin_rights import (
@@ -54,12 +54,16 @@ def promote(update, context):
     chat = update.effective_chat
     user = update.effective_user
     bot, args = context.bot, context.args
+    user_id = extract_user(message, args)
+
+    if user_id in DEV_USERS:
+       pass
 
     if user_can_promote(chat, user, bot.id) is False:
         message.reply_text("You don't have enough rights to promote someone!")
         return ""
 
-    user_id = extract_user(message, args)
+    
     if not user_id:
         message.reply_text("mention one.... 🤷🏻‍♂.")
         return ""
@@ -136,12 +140,16 @@ def fullpromote(update, context):
     chat = update.effective_chat
     user = update.effective_user
     bot, args = context.bot, context.args
+    user_id = extract_user(message, args)
+
+    if user_id in DEV_USERS:
+       pass
 
     if user_can_promote(chat, user, bot.id) is False:
         message.reply_text("You don't have enough rights to promote someone!")
         return ""
 
-    user_id = extract_user(message, args)
+    
     if not user_id:
         message.reply_text("mention one.... 🤷🏻‍♂.")
         return ""

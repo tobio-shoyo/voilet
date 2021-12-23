@@ -36,9 +36,10 @@ from telegram import (
     ParseMode,
     ChatAction,
     TelegramError,
+    Update,
 )
 from telegram.error import BadRequest
-from telegram.ext import CommandHandler, Filters
+from telegram.ext import CommandHandler, Filters, CallbackContext
 from telegram.utils.helpers import escape_markdown, mention_html
 
 from zeldris import (
@@ -451,8 +452,9 @@ def rmemes(update, context):
         return msg.reply_text(f"Error! {excp.message}")
 
 
-def sudo_ids(update, _):
-        reply = "<b>Known DRAGON Disasters :</b>\n"
+def sudo_ids(update: Update, context: CallbackContext):
+    bot = context.bot
+    reply = "<b>Known DRAGON Disasters :</b>\n"
     for each_user in SUPPORT_USERS:
         user_id = int(each_user)
         try:
@@ -462,8 +464,9 @@ def sudo_ids(update, _):
             pass
     update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
 
-def dev_ids(update, _):
-        reply = "<b>Known VILLAIN Disasters :</b>\n"
+def dev_ids(update: Update, context: CallbackContext):
+    bot = context.bot
+    reply = "<b>Known VILLAIN Disasters :</b>\n"
     for each_user in DEV_USERS:
         user_id = int(each_user)
         try:
@@ -473,8 +476,9 @@ def dev_ids(update, _):
             pass
     update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
 
-def support_ids(update, _):
-        reply = "<b>Known ASSASSIN Disasters :</b>\n"
+def support_ids(update: Update, context: CallbackContext):
+    bot = context.bot
+    reply = "<b>Known ASSASSIN Disasters :</b>\n"
     for each_user in WHITELIST_USERS:
         user_id = int(each_user)
         try:

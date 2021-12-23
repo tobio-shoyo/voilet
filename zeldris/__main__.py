@@ -692,7 +692,7 @@ def main():
     home_callback_handler = CallbackQueryHandler(
         zel_cb, pattern=r"zel_", run_async=True
     )
-    help_handler = DisableAbleCommandHandler("help", get_help, run_async=True)
+    help_handler = DisableAbleCommandHandler("help", get_help, pass_args=True, run_async=True)
     help_callback_handler = CallbackQueryHandler(
         help_button, pattern=r"help_", run_async=True
     )

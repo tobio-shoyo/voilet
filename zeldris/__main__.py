@@ -144,15 +144,16 @@ buttons = [
 ]
 
 HELP_STRINGS = """
-Hey there, I'm Voilet Evergarden[!](https://telegra.ph/file/6f25e1c920d5ec25c2e53.jpg)
-To make me functional, make sure that i have enough rights in your group.
-Helpful commands:
-- /start: Starts me! You've probably already used this.
-- /help: Sends this message; I'll tell you more about myself!
-- /donate: Gives you info on how to support me and my creator.
-Join My Support If You Have Any Queries: @VillanEvil_Support
-All commands can be used with the following: / !
-List of all the Modules:
+Hey there[!](https://telegra.ph/file/6f25e1c920d5ec25c2e53.jpg) Voilet  again
+━━━━━━━━━━━━━━━━━━━━━━━━
+Tʀᴜsᴛ  In my power
+━━━━━━━━━━━━━━━━━━━━━━━━
+Main commands available:
+ ❍ /start: Cʜᴇᴄᴋ Mᴇ... Iꜰ I Aᴍ Aʟɪᴠᴇ Oʀ Nᴏᴛ
+ ❍ /help: Usᴇ Tʜɪs... Iꜰ Yᴏᴜ Nᴇᴇᴅ Mᴏʀᴇ Iɴꜰᴏ Aʙᴏᴜᴛ Mᴇ!
+ ━━━━━━━━━━━━━━━━━━━━━━━━
+ For Issues Report At @villainevil_support
+ ━━━━━━━━━━━━━━━━━━━━━━━━
 """
 
 IMPORTED = {}

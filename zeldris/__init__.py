@@ -22,6 +22,7 @@ import time
 
 import spamwatch
 import telegram.ext as tg
+from pyrogram import Client, errors
 from redis import StrictRedis
 from telethon import TelegramClient
 from telethon.sessions import MemorySession
@@ -224,6 +225,13 @@ updater = tg.Updater(
     request_kwargs={"read_timeout": 10, "connect_timeout": 10},
 )
 dispatcher = updater.dispatcher
+
+pbot = Client("ErenPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+
+pbot.start()
+
+app = pbot.get_me()
+
 
 DEV_USERS = list(DEV_USERS)
 WHITELIST_USERS = list(WHITELIST_USERS)

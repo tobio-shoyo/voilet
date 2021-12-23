@@ -64,7 +64,7 @@ async def current_chat_permissions(chat_id):
     return perms
 
 
-@pbot.on_message(filters.command("fullpromote"))
+@app.on_message(filters.command("fullpromote"))
 async def fmupromote(_, message):
     try:
         from_user_id = message.from_user.id

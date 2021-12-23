@@ -54,6 +54,7 @@ from zeldris import (
     LOGGER,
     BLACKLIST_CHATS,
     WHITELIST_CHATS,
+    ALLOW_EXCL
 )
 
 # needed to dynamically load modules
@@ -144,7 +145,7 @@ buttons = [
 ]
 
 HELP_STRINGS = """
-Hey there[!](https://telegra.ph/file/6f25e1c920d5ec25c2e53.jpg) Voilet  again
+Hey there[!](https://telegra.ph/file/6f25e1c920d5ec25c2e53.jpg) {} again
 ━━━━━━━━━━━━━━━━━━━━━━━━
 Tʀᴜsᴛ  In my power
 ━━━━━━━━━━━━━━━━━━━━━━━━
@@ -154,7 +155,13 @@ Main commands available:
  ━━━━━━━━━━━━━━━━━━━━━━━━
  For Issues Report At @villainevil_support
  ━━━━━━━━━━━━━━━━━━━━━━━━
-"""
+
+{}
+And the following:
+""".format(
+    dispatcher.bot.first_name,
+    "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n",
+)
 
 IMPORTED = {}
 MIGRATEABLE = []

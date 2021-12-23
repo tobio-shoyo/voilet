@@ -45,7 +45,7 @@ from zeldris import (
     LOGGER,
     OWNER_ID,
     WHITELIST_USERS,
-    SUPPORT_USERS
+    SUPPORT_USERS,
     spamwtc,
     dispatcher,
 )

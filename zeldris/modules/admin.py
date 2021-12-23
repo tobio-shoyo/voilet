@@ -620,13 +620,6 @@ SETDESC_HANDLER = CommandHandler(
 PROMOTE_HANDLER = CommandHandler(
     "promote", promote, pass_args=True, filters=Filters.chat_type.groups, run_async=True
 )
-FULLPROMOTE_HANDLER = CommandHandler(
-    "fullpromote",
-    fullpromote,
-    pass_args=True,
-    filters=Filters.chat_type.groups,
-    run_async=True,
-)
 DEMOTE_HANDLER = CommandHandler(
     "demote", demote, pass_args=True, filters=Filters.chat_type.groups, run_async=True
 )
@@ -642,7 +635,6 @@ dispatcher.add_handler(UNPIN_HANDLER)
 dispatcher.add_handler(ADMIN_REFRESH_HANDLER)
 dispatcher.add_handler(INVITE_HANDLER)
 dispatcher.add_handler(PROMOTE_HANDLER)
-dispatcher.add_handler(FULLPROMOTE_HANDLER)
 dispatcher.add_handler(DEMOTE_HANDLER)
 dispatcher.add_handler(ADMINLIST_HANDLER)
 dispatcher.add_handler(SET_TITLE_HANDLER)

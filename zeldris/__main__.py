@@ -138,7 +138,7 @@ buttons = [
                         [
                             InlineKeyboardButton(
                                 text="⚓️ ʜᴇʟᴘ ⚓️",
-                                url="https://t.me/voilet_probot?start=help",
+                                callback_data="help_back",
                             ),
     ],
 ]
@@ -263,7 +263,6 @@ def start(update: Update, context: CallbackContext):
         else:
             message.reply_text(
                 PM_START_TEXT.format(
-                    escape_markdown(context.bot.first_name),
                     sql.num_users(),
                     sql.num_chats(),
                     escape_markdown(uptime),                    

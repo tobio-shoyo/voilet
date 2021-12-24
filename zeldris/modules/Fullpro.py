@@ -10,6 +10,8 @@ import os
 from zeldris import DEV_USERS, SUPPORT_USERS
 from zeldris import pbot as app
 
+BOT_ID = app.id
+
 
 async def member_permissions(chat_id: int, user_id: int):
     perms = []
@@ -76,6 +78,7 @@ async def fmupromote(_, message):
         ):
             await message.reply_text("You don't have enough permissions")
             return
+        bot = await app.get_chat_member(chat_id, BOT_ID)
         if len(message.command) == 2:
             username = message.text.split(None, 1)[1]
             user_id = (await app.get_users(username)).id

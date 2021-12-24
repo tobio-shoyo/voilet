@@ -125,7 +125,7 @@ def list_all_chats(update: Update, context: CallbackContext):
 
 
 
-__help__ = "
+__help__ = ""
 Chatbot utilizes the Kuki API and allows Voilet to talk and provides
  a more interactive group chat experience.
 
@@ -135,7 +135,7 @@ Chatbot utilizes the Kuki API and allows Voilet to talk and provides
    ➢ `rmchat`*:* Disables Chatbot mode in the chat.
    
 Reports bugs at @Villainevil_support
-"
+""
 
 __mod_name__ = "ChatBot"
 

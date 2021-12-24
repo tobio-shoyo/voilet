@@ -34,7 +34,7 @@ from zeldris.modules.helper_funcs.chat_status import user_admin
 from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
 
 @user_admin
-@gloggable
+@loggable
 def add_chat(update: Update, context: CallbackContext):
     chat = update.effective_chat
     msg = update.effective_message
@@ -54,7 +54,7 @@ def add_chat(update: Update, context: CallbackContext):
 
 
 @user_admin
-@gloggable
+@loggable
 def rem_chat(update: Update, context: CallbackContext):
     msg = update.effective_message
     chat = update.effective_chat

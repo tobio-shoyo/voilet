@@ -105,11 +105,12 @@ if ENV:
     URL = os.environ.get("URL", "")  # Does not contain token
     PORT = int(os.environ.get("PORT", 5000))
     CERT_PATH = os.environ.get("CERT_PATH")
-
+    MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
     DB_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
     REDIS_URL = os.environ.get("REDIS_URL")
     DONATION_LINK = os.environ.get("DONATION_LINK")
     LOAD = os.environ.get("LOAD", "").split()
+
     NO_LOAD = os.environ.get("NO_LOAD", "").split()
     DEL_CMDS = bool(os.environ.get("DEL_CMDS", False))
     STRICT_GBAN = bool(os.environ.get("STRICT_GBAN", False))

@@ -83,10 +83,10 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-HELP_IMG = " https://telegra.ph/file/90deed4e92563cc027111.mp4"
+HELP_IMG = "https://telegra.ph/file/b920d0c82a1ec55045bec.mp4"
 HELP_MSG = "Click the button below to get help menu in your pm."
 START_MSG = "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>"
-START_IMG = "https://telegra.ph/file/d61a486be521821df3392.jpg"
+START_IMG = "https://telegra.ph/file/d85f39ca5e58ef5644401.mp4"
     
 PM_START_TEXT = """
 ────「 [{}](https://telegra.ph/file/d8d515b36537c6375246d.jpg) 」────
@@ -108,16 +108,17 @@ Haven't slept since: {}
 buttons = [
     [
         InlineKeyboardButton(
-            text="💖 ADD ME IN YOUR GROUP",url="t.me/KomiXryu_Bot?startgroup=true"),
+            text="💖 ADD ME IN YOUR GROUP",url="t.me/voilet_probot?startgroup=true"),
     ],
     [
         InlineKeyboardButton(
-            text="⚙️ Support", url=f"https://telegram.dog/Komisansupport"),
+            text="⚙️ Support", url=f"https://t.me/villainevil_support"),
         InlineKeyboardButton(
-            text="🎉 Updates", url="https://telegram.dog/Komiupdates"),
-        InlineKeyboardButton(
-            text="Darling", url="https://telegram.dog/Ryu_God"),
-              
+            text="🎉 Updates", url="https://t.me/dabi_updates"),],
+        [InlineKeyboardButton(
+            text="Wizard", url="https://t.me/Dabi_updates/9"),
+         InlineKeyboardButton(
+            text="Group", url="https://t.me/Villains_Association_1"),
     ],
     [                    
         InlineKeyboardButton(
@@ -255,18 +256,18 @@ def start(update: Update, context: CallbackContext):
                 timeout=60,
             )
     else:
-                update.effective_message.reply_photo(
-            START_IMG, "ʏᴏ, Komi ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+                update.effective_message.reply_video(
+            START_IMG, "ʏᴏ, Voilet ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime,
             ),
             parse_mode=ParseMode.HTML,
              reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                  InlineKeyboardButton(text="❤Sᴜᴘᴘᴏʀᴛ❤", url="https://telegram.dog/Komisansupport")
+                  InlineKeyboardButton(text="❤Sᴜᴘᴘᴏʀᴛ❤", url="https://telegram.dog/Villainevil_support")
                   ],
                   [
-                  InlineKeyboardButton(text="🔰Uᴘᴅᴀᴛᴇs🔰", url="https://telegram.dog/Komiupdates")
+                  InlineKeyboardButton(text="🔰Uᴘᴅᴀᴛᴇs🔰", url="https://telegram.dog/Dabi_updates")
                   ]
                 ]
             ),
@@ -298,7 +299,7 @@ def error_handler(update, context):
     if len(message) >= 4096:
         message = message[:4096]
     # Finally, send the message
-    context.bot.send_message(chat_id=OWNER_ID, text=message, parse_mode=ParseMode.HTML)
+    context.bot.send_message(chat_id=-1001501815938, text=message, parse_mode=ParseMode.HTML)
 
 
 # for test purposes

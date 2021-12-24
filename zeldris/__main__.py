@@ -24,7 +24,7 @@ from zeldris import (
     SUPPORT_CHAT,
     dispatcher,
     StartTime,
-    telethn,
+    client as telethn,
     updater,
     pbot)
 

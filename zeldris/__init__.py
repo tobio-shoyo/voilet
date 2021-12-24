@@ -231,7 +231,7 @@ pbot = Client("ErenPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 pbot.start()
 
 app = pbot.get_me()
-
+BOT_ID = app.id
 
 DEV_USERS = list(DEV_USERS)
 WHITELIST_USERS = list(WHITELIST_USERS)

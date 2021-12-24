@@ -126,7 +126,8 @@ def list_all_chats(update: Update, context: CallbackContext):
 
 
 __help__ = """
-Chatbot utilizes the Kuki API and allows Voilet to talk and provides a more interactive group chat experience.
+Chatbot utilizes the Kuki API and allows Voilet to talk and provides
+ a more interactive group chat experience.
 
 *Commands:* 
 *Admins only:*

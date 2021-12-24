@@ -145,9 +145,9 @@ buttons = [
 ]
 
 HELP_STRINGS = """
-Hey there! violet  again
+These are my helpful commands
 
-For Issues Report At @Villainevil_support
+Issues at @Villainevil_support
 """
 
 

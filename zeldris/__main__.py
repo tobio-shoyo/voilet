@@ -11,7 +11,7 @@ import zeldris.modules.sql.users_sql as sql
 
 from sys import argv
 from typing import Optional
-from SaitamaRobot import (
+from zeldris import (
     ALLOW_EXCL,
     CERT_PATH,
     DONATION_LINK,
@@ -84,13 +84,13 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 HELP_IMG = " https://telegra.ph/file/90deed4e92563cc027111.mp4"
-HELP_MSG = "Click the button below to get help manu in your pm."
+HELP_MSG = "Click the button below to get help menu in your pm."
 START_MSG = "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>"
 START_IMG = "https://telegra.ph/file/d61a486be521821df3392.jpg"
     
 PM_START_TEXT = """
-────「 [{}](https://telegra.ph/file/d61a486be521821df3392.jpg) 」────
-Heyyo `{}`, Komi here to help,
+────「 [{}](https://telegra.ph/file/d8d515b36537c6375246d.jpg) 」────
+Heyyo `{}`, Voilet here to help,
 *I am an Anime themed advance group management bot with a lot of awesome Features*
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 • *Uptime:* `{}`

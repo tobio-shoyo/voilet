@@ -45,3 +45,4 @@ pymongo
 envparse
 asyncio
 motor
+dataparser

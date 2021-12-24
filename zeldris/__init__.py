@@ -110,7 +110,7 @@ if ENV:
     REDIS_URL = os.environ.get("REDIS_URL")
     DONATION_LINK = os.environ.get("DONATION_LINK")
     LOAD = os.environ.get("LOAD", "").split()
-
+    TEMP_DOWNLOAD_DIRECTORY = ("./")
     NO_LOAD = os.environ.get("NO_LOAD", "").split()
     DEL_CMDS = bool(os.environ.get("DEL_CMDS", False))
     STRICT_GBAN = bool(os.environ.get("STRICT_GBAN", False))

@@ -38,3 +38,4 @@ fontTools
 Python_ARQ
 pyrogram
 aiohttp>=2.2.5
+TgCrypto

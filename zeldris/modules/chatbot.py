@@ -125,14 +125,9 @@ def list_all_chats(update: Update, context: CallbackContext):
 
 
 
-__help__ = """Chatbot utilizes the Kuki API and allows Voilet to talk
-
-Commands:
-Admins only:
+__help__ = """Admins only:
    ➢ addchat : Enables Chatbot mode in the chat.
-   ➢ rmchat : Disables Chatbot mode in the chat.
-   
-Reports bugs at @Villainevil_support"""
+   ➢ rmchat : Disables Chatbot mode in the chat."""
 
 __mod_name__ = "ChatBot"
 

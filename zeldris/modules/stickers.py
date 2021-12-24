@@ -146,7 +146,7 @@ def kang(update, context):
                     reply_markup=InlineKeyboardMarkup(
                     [
                         [InlineKeyboardButton(text="Your Pack", url=f't.me/addstickers/{packname}')]
-                    ])
+                    ]),
                     parse_mode=ParseMode.MARKDOWN,
                 )
 

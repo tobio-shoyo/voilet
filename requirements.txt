@@ -42,3 +42,5 @@ TgCrypto
 search_engine_parser
 secureme
 telegraph
+pymongo
+envparse

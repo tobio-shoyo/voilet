@@ -109,7 +109,7 @@ async def imdb(e):
         await e.reply("Plox enter **Valid movie name** kthx")
 
 
-__mod_name = "IMDB"
+__mod_name__ = "IMDB"
 __help__ = """
 *IMDB*
  ❍ /imfb :Get info of movies and series from IMDB

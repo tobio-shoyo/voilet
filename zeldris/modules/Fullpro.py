@@ -8,9 +8,9 @@ import os
 
 
 from zeldris import DEV_USERS, SUPPORT_USERS
-from zeldris import pbot as app
+from zeldris import BOT_ID, pbot as app
 
-BOT_ID = app.id
+
 
 
 async def member_permissions(chat_id: int, user_id: int):

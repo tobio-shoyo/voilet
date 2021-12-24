@@ -146,11 +146,9 @@ buttons = [
 
 HELP_STRINGS = """
 Hey there! violet  again
-━━━━━━━━━━━━━━━━━━━━━━━━
-Tʀᴜsᴛ  In my power
- ━━━━━━━━━━━━━━━━━━━━━━━━
- For Issues Report At @Villainevil_support
- ━━━━━━━━━━━━━━━━━━━━━━━━ """
+
+For Issues Report At @Villainevil_support
+"""
 
 
 IMPORTED = {}

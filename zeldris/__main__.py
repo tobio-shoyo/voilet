@@ -146,8 +146,6 @@ buttons = [
 
 HELP_STRINGS = """
 These are my helpful commands
-
-Issues at @Villainevil_support
 """
 
 

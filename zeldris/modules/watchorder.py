@@ -1,6 +1,6 @@
 import requests
 
-from TGRobot import pbot as pgram
+from zeldris import pbot as pgram
 from pyrogram import filters
 from bs4 import BeautifulSoup
 

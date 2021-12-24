@@ -25,3 +25,9 @@ def watchorderx(_,message):
 
 		data = f"{data}\n{x.text}" if data else x.text
 	message.reply_text(f'Watchorder of {anime}: \n```{data}```')
+
+__mod_name__ = "Watch Order"
+__help__ = """
+*Watch Order*
+ ❍ `/watchorder` :Get watch order of animes
+"""

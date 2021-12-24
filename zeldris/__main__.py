@@ -145,7 +145,16 @@ buttons = [
 ]
 
 HELP_STRINGS = """
-Helpful commands """
+Hey there! violet  again
+━━━━━━━━━━━━━━━━━━━━━━━━
+Tʀᴜsᴛ  In my power
+━━━━━━━━━━━━━━━━━━━━━━━━
+Main commands available:
+ ❍ /start: Cʜᴇᴄᴋ Mᴇ... Iꜰ I Aᴍ Aʟɪᴠᴇ Oʀ Nᴏᴛ
+ ❍ /help: Usᴇ Tʜɪs... Iꜰ Yᴏᴜ Nᴇᴇᴅ Mᴏʀᴇ Iɴꜰᴏ Aʙᴏᴜᴛ Mᴇ!
+ ━━━━━━━━━━━━━━━━━━━━━━━━
+ For Issues Report At @Villainevil_support
+ ━━━━━━━━━━━━━━━━━━━━━━━━ """
 
 
 IMPORTED = {}

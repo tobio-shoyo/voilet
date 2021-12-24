@@ -1,11 +1,11 @@
-from TGRobot import telethn as tbot
+from zeldris import client as tbot
 import os
 import re
 import bs4
 import requests
 from telethon import types
 from telethon.tl import functions
-from TGRobot.events import register
+from zeldris.events import register
 
 langi = "en"
 

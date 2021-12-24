@@ -46,3 +46,4 @@ envparse
 asyncio
 motor
 dateparser
+dnspython

@@ -149,6 +149,8 @@ DATA_EXPORT = []
 CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
+GDPR = []
+
 for module_name in ALL_MODULES:
     imported_module = importlib.import_module("zeldris.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
@@ -171,6 +173,9 @@ for module_name in ALL_MODULES:
 
     if hasattr(imported_module, "__user_info__"):
         USER_INFO.append(imported_module)
+
+    if hasattr(imported_module, "__gdpr__"):
+        GDPR.append(imported_module)
 
     if hasattr(imported_module, "__import_data__"):
         DATA_IMPORT.append(imported_module)
@@ -675,8 +680,8 @@ def main():
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             dispatcher.bot.sendMessage(
-                f"@{SUPPORT_CHAT}",
-                "[I Am Alive Now!](https://telegra.ph/file/a85f35499ecedc8771e8e.mp4)",
+                "@Villainevil_support",
+                "[I Am Alive Now!](https://telegra.ph/file/138ca9fd4e1f59501de9a.mp4)",
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:

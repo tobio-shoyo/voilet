@@ -137,7 +137,7 @@ CHATBOT_HANDLER = MessageHandler(
     Filters.text & (~Filters.regex(r"^#[^\s]+") & ~Filters.regex(r"^!")
                     & ~Filters.regex(r"^\/")), chatbot, run_async=True)
 LIST_ALL_CHATS_HANDLER = CommandHandler(
-    "allchats", list_all_chats, filters=CustomFilters.dev_filter, run_async=True)
+    "aichats", list_all_chats, filters=CustomFilters.dev_filter, run_async=True)
 
 dispatcher.add_handler(ADD_CHAT_HANDLER)
 dispatcher.add_handler(REMOVE_CHAT_HANDLER)

@@ -60,8 +60,9 @@ async def cb_handler(bot, update):
         await cancel_extract(bot, update.message)
 
 """
-__mod_name__ = "Rename"
-__help__ =  """
+# __mod_name__ = "Rename"
+# __help__ 
+  """
 *Rename*
  ❍ /rename <new name> : Rename the file / video 
 

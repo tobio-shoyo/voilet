@@ -356,7 +356,7 @@ def linify(update: Update, context: CallbackContext):
 
     for normiecharacter in string:
         if normiecharacter in normiefont:
-            linedcharacter = limedfont[normiefont.index(normiecharacter)]
+            limedcharacter = limedfont[normiefont.index(normiecharacter)]
             string = string.replace(normiecharacter, limedcharacter)
 
     if message.reply_to_message:

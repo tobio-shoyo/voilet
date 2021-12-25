@@ -3,7 +3,7 @@ import asyncio
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from zeldris import client
+from zeldris import client as telethn
 from zeldris.events import register as nobara
 
 

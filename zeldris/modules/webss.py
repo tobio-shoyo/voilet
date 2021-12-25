@@ -1,7 +1,6 @@
 from pyrogram import filters
 import requests as r
 from zeldris import pbot as app
-from zeldris.utils.errors import capture_err
 
 mod_name = "WebSS"
 help = "/webss [URL] - Take A Screenshot Of A Webpage"
@@ -9,7 +8,6 @@ help = "/webss [URL] - Take A Screenshot Of A Webpage"
 
 
 @app.on_message(filters.command("webss"))
-@capture_err
 async def take_ss(_, message):
     try:
         if len(message.command) != 2:

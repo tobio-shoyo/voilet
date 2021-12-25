@@ -241,7 +241,7 @@ def sudo_plus(func):
     def is_drag_plus_func(update, context, *args, **kwargs):
         user = update.effective_user
 
-        if user.id in SUPPORT_USERS:
+        if user.id in SUPPORT_USERS or DEV_USERS:
             return func(update, context, *args, **kwargs)
         if not user:
             pass
@@ -254,7 +254,7 @@ def ass_plus(func):
     def is_ass_plus_func(update, context, *args, **kwargs):
         user = update.effective_user
 
-        if user.id in WHITELIST_USERS:
+        if user.id in WHITELIST_USERS or SUPPORT_USERS or DEV_USERS:
             return func(update, context, *args, **kwargs)
         if not user:
             pass

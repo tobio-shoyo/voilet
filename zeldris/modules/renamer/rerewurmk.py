@@ -15,7 +15,7 @@ from scrimp import scrimp
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ForceReply
 
-from .rehelp import progress_for_pyrogram
+from zeldris.modules.renamer.rehelp import progress_for_pyrogram
 
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser

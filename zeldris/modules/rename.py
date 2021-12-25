@@ -45,10 +45,12 @@ async def cancel_extract(bot, update):
 async def cb_handler(bot, update):
         
     if "rename_vid" in update.data:
+        query = update.message.replace("/rename", "")
         await update.message.delete()
-        await rename_as_video(bot, update.message)
+        await rename_as_video(bot, query)
         
     elif "rename_doc" in update.data:
+        query = update.message.replace("/rename", "")
         await update.message.delete()
         await rename_as_doc(bot, update.message)
         

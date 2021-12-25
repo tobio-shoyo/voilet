@@ -432,6 +432,7 @@ __command_list__ = [
     "shout",
     "weebify",
     "8ball",
+    "lined",
 ]
 __handlers__ = [
     RUNS_HANDLER,
@@ -448,4 +449,5 @@ __handlers__ = [
     SHOUT_HANDLER,
     WEEBIFY_HANDLER,
     EIGHTBALL_HANDLER,
+    LINIFY_HANDLER,
 ]

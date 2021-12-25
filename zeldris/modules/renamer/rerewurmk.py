@@ -51,7 +51,7 @@ async def rename_as_doc(bot, message):
         revoke=True
     )
     
-        file_name = message.text.replace("rename", "")
+        file_name = message.text
         description = scrimp.CUSTOM_CAPTION_UL_FILE.format(newname=file_name)
         download_location = "./" 
 
@@ -181,7 +181,7 @@ async def rename_as_video(bot, message):
         revoke=True
     )
     
-        file_name = message.text.replace("rename", "")
+        file_name = message.text
         description = scrimp.CUSTOM_CAPTION_UL_FILE.format(newname=file_name)
         download_location = "./" 
 

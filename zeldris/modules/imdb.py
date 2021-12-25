@@ -112,6 +112,6 @@ async def imdb(e):
 __mod_name__ = "IMDB"
 __help__ = """
 *IMDB*
- ❍ /imfb :Get info of movies and series from IMDB
+ ❍ /imdb :Get info of movies and series from IMDB
 
 """

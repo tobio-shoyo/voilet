@@ -1,3 +1,4 @@
+"""
 import time
 import os
 import asyncio
@@ -58,7 +59,7 @@ async def cb_handler(bot, update):
         await update.message.delete()
         await cancel_extract(bot, update.message)
 
-
+"""
 __mod_name__ = "Rename"
 __help__ =  """
 *Rename*

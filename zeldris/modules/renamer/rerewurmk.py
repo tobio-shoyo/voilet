@@ -10,7 +10,7 @@ import asyncio
 import pyrogram
 
 
-from scrimp import scrimp
+from zeldris.modules.renamer.scrimp import scrimp
 
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ForceReply

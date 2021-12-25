@@ -18,7 +18,7 @@ async def take_ss(_, message):
         m = await message.reply_text("**Taking Screenshot**")
         await m.edit("**Uploading**")
         try:
-        x = r.get(f"https://webshot.amanoteam.com/print?q={url}")
+               x = r.get(f"https://webshot.amanoteam.com/print?q={url}")
         if x.status_code != 200:
             return
         else:

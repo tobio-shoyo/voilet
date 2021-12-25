@@ -551,7 +551,7 @@ def latinify(update: Update, context: CallbackContext):
         string = "  ".join(args).lower()
 
     if not string:
-        message.reply_text("Usage is `/lined <text>`", parse_mode=ParseMode.MARKDOWN)
+        message.reply_text("Usage is `/latin <text>`", parse_mode=ParseMode.MARKDOWN)
         return
 
     for normiecharacter in string:
@@ -576,7 +576,7 @@ def squarify(update: Update, context: CallbackContext):
         string = "  ".join(args).lower()
 
     if not string:
-        message.reply_text("Usage is `/lined <text>`", parse_mode=ParseMode.MARKDOWN)
+        message.reply_text("Usage is `/square <text>`", parse_mode=ParseMode.MARKDOWN)
         return
 
     for normiecharacter in string:
@@ -601,7 +601,7 @@ def fsquarify(update: Update, context: CallbackContext):
         string = "  ".join(args).lower()
 
     if not string:
-        message.reply_text("Usage is `/lined <text>`", parse_mode=ParseMode.MARKDOWN)
+        message.reply_text("Usage is `/fsquare <text>`", parse_mode=ParseMode.MARKDOWN)
         return
 
     for normiecharacter in string:
@@ -626,7 +626,7 @@ def bubbify(update: Update, context: CallbackContext):
         string = "  ".join(args).lower()
 
     if not string:
-        message.reply_text("Usage is `/lined <text>`", parse_mode=ParseMode.MARKDOWN)
+        message.reply_text("Usage is `/bubble <text>`", parse_mode=ParseMode.MARKDOWN)
         return
 
     for normiecharacter in string:
@@ -651,7 +651,7 @@ def fbubbify(update: Update, context: CallbackContext):
         string = "  ".join(args).lower()
 
     if not string:
-        message.reply_text("Usage is `/lined <text>`", parse_mode=ParseMode.MARKDOWN)
+        message.reply_text("Usage is `/fbubble <text>`", parse_mode=ParseMode.MARKDOWN)
         return
 
     for normiecharacter in string:
@@ -676,7 +676,7 @@ def bluify(update: Update, context: CallbackContext):
         string = "  ".join(args).lower()
 
     if not string:
-        message.reply_text("Usage is `/lined <text>`", parse_mode=ParseMode.MARKDOWN)
+        message.reply_text("Usage is `/blue <text>`", parse_mode=ParseMode.MARKDOWN)
         return
 
     for normiecharacter in string:
@@ -702,7 +702,6 @@ __help__ = """
 ❂ /roll*:* Roll a dice
 ❂ /rlg*:* Join ears,nose,mouth and create an emo ;-;
 ❂ /shout <keyword>*:* write anything you want to give loud shout
-❂ /weebify <text>*:* returns a weebified text
 ❂ /sanitize*:* always use this before /pat or any contact
 ❂ /pat*:* pats a user, or get patted
 ❂ /8ball*:* predicts using 8ball method

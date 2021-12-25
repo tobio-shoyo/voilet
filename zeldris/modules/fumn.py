@@ -314,6 +314,181 @@ limedfont = [
     "𝕫",
 ]
 
+latinfont = [
+    "𝒶",
+    "𝒷",
+    "𝒸",
+    "𝒹",
+    "ℯ",
+    "𝒻",
+    "ℊ",
+    "𝒽",
+    "𝒾",
+    "𝒿",
+    "𝓀",
+    "𝓁",
+    "𝓂",
+    "𝓃",
+    "ℴ",
+    "𝓅",
+    "𝓆",
+    "𝓇",
+    "𝓈",
+    "𝓉",
+    "𝓊",
+    "𝓋",
+    "𝓌",
+    "𝓍",
+    "𝓎",
+    "𝓏",
+]
+
+bluefont = [
+    "🇦",
+    "🇧",
+    "🇨",
+    "🇩",
+    "🇪",
+    "🇫",
+    "🇬",
+    "🇭",
+    "🇮",
+    "🇯",
+    "🇰",
+    "🇱",
+    "🇲",
+    "🇳",
+    "🇴",
+    "🇵",
+    "🇶",
+    "🇷",
+    "🇸",
+    "🇹",
+    "🇺",
+    "🇻",
+    "🇼",
+    "🇽",
+    "🇾",
+    "🇿",
+]
+
+sqfont = [
+    "🄰",
+    "🄱",
+    "🄲",
+    "🄳",
+    "🄴",
+    "🄵",
+    "🄶",
+    "🄷",
+    "🄸",
+    "🄹",
+    "🄺",
+    "🄻",
+    "🄼",
+    "🄽",
+    "🄾",
+    "🄿",
+    "🅀",
+    "🅁",
+    "🅂",
+    "🅃",
+    "🅄",
+    "🅅",
+    "🅆",
+    "🅇",
+    "🅈",
+    "🅉",
+]
+
+bubbfont = [
+    "ⓐ",
+    "ⓑ",
+    "ⓒ",
+    "ⓓ",
+    "ⓔ",
+    "ⓕ",
+    "ⓖ",
+    "ⓗ",
+    "ⓘ",
+    "ⓙ",
+    "ⓚ",
+    "ⓛ",
+    "ⓜ",
+    "ⓝ",
+    "ⓞ",
+    "ⓟ",
+    "ⓠ",
+    "ⓡ",
+    "ⓢ",
+    "ⓣ",
+    "ⓤ",
+    "ⓥ",
+    "ⓦ",
+    "ⓧ",
+    "ⓨ",
+    "ⓩ"
+]
+
+fbubbfont = [
+    "🅐",
+    "🅑",
+    "🅒",
+    "🅓",
+    "🅔",
+    "🅕",
+    "🅖",
+    "🅗",
+    "🅘",
+    "🅙",
+    "🅚",
+    "🅛",
+    "🅜",
+    "🅝",
+    "🅞",
+    "🅟",
+    "🅠",
+    "🅡",
+    "🅢",
+    "🅣",
+    "🅤",
+    "🅥",
+    "🅦",
+    "🅧",
+    "🅨",
+    "🅩"
+]
+
+fsquarefont = [
+    "🅰",
+    "🅱",
+    "🅲",
+    "🅳",
+    "🅴",
+    "🅵",
+    "🅶",
+    "🅷",
+    "🅸",
+    "🅹",
+    "🅺",
+    "🅻",
+    "🅼",
+    "🅽",
+    "🅾",
+    "🅿",
+    "🆀",
+    "🆁",
+    "🆂",
+    "🆃",
+    "🆄",
+    "🆅",
+    "🆆",
+    "🆇",
+    "🆈",
+    "🆉"
+]
+
+
 def weebify(update: Update, context: CallbackContext):
     args = context.args
     message = update.effective_message
@@ -364,6 +539,157 @@ def linify(update: Update, context: CallbackContext):
     else:
         message.reply_text(string)
 
+def latinify(update: Update, context: CallbackContext):
+    args = context.args
+    message = update.effective_message
+    string = ""
+
+    if message.reply_to_message:
+        string = message.reply_to_message.text.lower().replace(" ", "  ")
+
+    if args:
+        string = "  ".join(args).lower()
+
+    if not string:
+        message.reply_text("Usage is `/lined <text>`", parse_mode=ParseMode.MARKDOWN)
+        return
+
+    for normiecharacter in string:
+        if normiecharacter in normiefont:
+            latedcharacter = latinfont[normiefont.index(normiecharacter)]
+            string = string.replace(normiecharacter, latedcharacter)
+
+    if message.reply_to_message:
+        message.reply_to_message.reply_text(string)
+    else:
+        message.reply_text(string)
+
+def squarify(update: Update, context: CallbackContext):
+    args = context.args
+    message = update.effective_message
+    string = ""
+
+    if message.reply_to_message:
+        string = message.reply_to_message.text.lower().replace(" ", "  ")
+
+    if args:
+        string = "  ".join(args).lower()
+
+    if not string:
+        message.reply_text("Usage is `/lined <text>`", parse_mode=ParseMode.MARKDOWN)
+        return
+
+    for normiecharacter in string:
+        if normiecharacter in normiefont:
+            sqcharacter = sqfont[normiefont.index(normiecharacter)]
+            string = string.replace(normiecharacter, sqcharacter)
+
+    if message.reply_to_message:
+        message.reply_to_message.reply_text(string)
+    else:
+        message.reply_text(string)
+
+def fsquarify(update: Update, context: CallbackContext):
+    args = context.args
+    message = update.effective_message
+    string = ""
+
+    if message.reply_to_message:
+        string = message.reply_to_message.text.lower().replace(" ", "  ")
+
+    if args:
+        string = "  ".join(args).lower()
+
+    if not string:
+        message.reply_text("Usage is `/lined <text>`", parse_mode=ParseMode.MARKDOWN)
+        return
+
+    for normiecharacter in string:
+        if normiecharacter in normiefont:
+            fsqcharacter = fsquarefont[normiefont.index(normiecharacter)]
+            string = string.replace(normiecharacter, fsqcharacter)
+
+    if message.reply_to_message:
+        message.reply_to_message.reply_text(string)
+    else:
+        message.reply_text(string)
+
+def bubbify(update: Update, context: CallbackContext):
+    args = context.args
+    message = update.effective_message
+    string = ""
+
+    if message.reply_to_message:
+        string = message.reply_to_message.text.lower().replace(" ", "  ")
+
+    if args:
+        string = "  ".join(args).lower()
+
+    if not string:
+        message.reply_text("Usage is `/lined <text>`", parse_mode=ParseMode.MARKDOWN)
+        return
+
+    for normiecharacter in string:
+        if normiecharacter in normiefont:
+            bubcharacter = bubbfont[normiefont.index(normiecharacter)]
+            string = string.replace(normiecharacter, bubcharacter)
+
+    if message.reply_to_message:
+        message.reply_to_message.reply_text(string)
+    else:
+        message.reply_text(string)
+
+def fbubbify(update: Update, context: CallbackContext):
+    args = context.args
+    message = update.effective_message
+    string = ""
+
+    if message.reply_to_message:
+        string = message.reply_to_message.text.lower().replace(" ", "  ")
+
+    if args:
+        string = "  ".join(args).lower()
+
+    if not string:
+        message.reply_text("Usage is `/lined <text>`", parse_mode=ParseMode.MARKDOWN)
+        return
+
+    for normiecharacter in string:
+        if normiecharacter in normiefont:
+            fbubcharacter = fbubbfont[normiefont.index(normiecharacter)]
+            string = string.replace(normiecharacter, fbubcharacter)
+
+    if message.reply_to_message:
+        message.reply_to_message.reply_text(string)
+    else:
+        message.reply_text(string)
+
+def bluify(update: Update, context: CallbackContext):
+    args = context.args
+    message = update.effective_message
+    string = ""
+
+    if message.reply_to_message:
+        string = message.reply_to_message.text.lower().replace(" ", "  ")
+
+    if args:
+        string = "  ".join(args).lower()
+
+    if not string:
+        message.reply_text("Usage is `/lined <text>`", parse_mode=ParseMode.MARKDOWN)
+        return
+
+    for normiecharacter in string:
+        if normiecharacter in normiefont:
+            blucharacter = bluefont[normiefont.index(normiecharacter)]
+            string = string.replace(normiecharacter, blucharacter)
+
+    if message.reply_to_message:
+        message.reply_to_message.reply_text(string)
+    else:
+        message.reply_text(string)
+
+
 
 __help__ = """
 ❂ /runs*:* reply a random string from an array of replies
@@ -399,6 +725,12 @@ TABLE_HANDLER = DisableAbleCommandHandler("table", table, run_async=True)
 SHOUT_HANDLER = DisableAbleCommandHandler("shout", shout, run_async=True)
 WEEBIFY_HANDLER = DisableAbleCommandHandler("weebify", weebify, run_async=True)
 LINIFY_HANDLER = DisableAbleCommandHandler("lined", linify, run_async=True)
+LATINIFY_HANDLER = DisableAbleCommandHandler("latin", latinify, run_async=True)
+SQUARIFY_HANDLER = DisableAbleCommandHandler("square", squarify, run_async=True)
+FSQUARIFY_HANDLER = DisableAbleCommandHandler("fsquare", fsquarify, run_async=True)
+BUBBIFY_HANDLER = DisableAbleCommandHandler("bubble", bubbify, run_async=True)
+FBUBBIFY_HANDLER = DisableAbleCommandHandler("fbubble", fbubbify, run_async=True)
+BLUIFY_HANDLER = DisableAbleCommandHandler("blue", bluify, run_async=True)
 
 dispatcher.add_handler(WEEBIFY_HANDLER)
 dispatcher.add_handler(SHOUT_HANDLER)
@@ -415,6 +747,12 @@ dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(EIGHTBALL_HANDLER)
 dispatcher.add_handler(TABLE_HANDLER)
 dispatcher.add_handler(LINIFY_HANDLER)
+dispatcher.add_handler(LATINIFY_HANDLER)
+dispatcher.add_handler(BLUIFY_HANDLER)
+dispatcher.add_handler(BUBBIFY_HANDLER)
+dispatcher.add_handler(FBUBBIFY_HANDLER)
+dispatcher.add_handler(SQUARIFY_HANDLER)
+dispatcher.add_handler(FSQUARIFY_HANDLER)
 
 __mod_name__ = "Fun"
 __command_list__ = [
@@ -433,6 +771,12 @@ __command_list__ = [
     "weebify",
     "8ball",
     "lined",
+    "latin",
+    "square",
+    "fsquare",
+    "bubble",
+    "fbubble",
+    "blue",
 ]
 __handlers__ = [
     RUNS_HANDLER,
@@ -450,4 +794,10 @@ __handlers__ = [
     WEEBIFY_HANDLER,
     EIGHTBALL_HANDLER,
     LINIFY_HANDLER,
+    LATINIFY_HANDLER,
+    BLUIFY_HANDLER,
+    FSQUARIFY_HANDLER,
+    SQUARIFY_HANDLER,
+    BUBBIFY_HANDLER,
+    FBUBBIFY_HANDLER
 ]

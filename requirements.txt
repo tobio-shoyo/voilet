@@ -47,3 +47,5 @@ asyncio
 motor
 dateparser
 dnspython
+hachoir
+numpy

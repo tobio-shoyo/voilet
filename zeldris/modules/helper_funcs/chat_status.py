@@ -245,8 +245,6 @@ def sudo_plus(func):
             return func(update, context, *args, **kwargs)
         if not user:
             pass
-            except BaseException:
-                pass
 
 
     return is_drag_plus_func
@@ -260,8 +258,6 @@ def ass_plus(func):
             return func(update, context, *args, **kwargs)
         if not user:
             pass
-            except BaseException:
-                pass
 
     return is_ass_plus_func
 

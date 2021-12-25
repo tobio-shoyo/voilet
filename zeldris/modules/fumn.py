@@ -285,6 +285,34 @@ weebyfont = [
     "乙",
 ]
 
+limedfont = [
+    "𝕒",
+    "𝕓",
+    "𝕔",
+    "𝕕",
+    "𝕖",
+    "𝕗",
+    "𝕘",
+    "𝕙",
+    "𝕚",
+    "𝕛",
+    "𝕜",
+    "𝕝",
+    "𝕞",
+    "𝕟",
+    "𝕠",
+    "𝕡",
+    "𝕢",
+    "𝕣",
+    "𝕤",
+    "𝕥",
+    "𝕦",
+    "𝕧",
+    "𝕨",
+    "𝕩",
+    "𝕪",
+    "𝕫",
+]
 
 def weebify(update: Update, context: CallbackContext):
     args = context.args
@@ -305,6 +333,31 @@ def weebify(update: Update, context: CallbackContext):
         if normiecharacter in normiefont:
             weebycharacter = weebyfont[normiefont.index(normiecharacter)]
             string = string.replace(normiecharacter, weebycharacter)
+
+    if message.reply_to_message:
+        message.reply_to_message.reply_text(string)
+    else:
+        message.reply_text(string)
+
+def linify(update: Update, context: CallbackContext):
+    args = context.args
+    message = update.effective_message
+    string = ""
+
+    if message.reply_to_message:
+        string = message.reply_to_message.text.lower().replace(" ", "  ")
+
+    if args:
+        string = "  ".join(args).lower()
+
+    if not string:
+        message.reply_text("Usage is `/lined <text>`", parse_mode=ParseMode.MARKDOWN)
+        return
+
+    for normiecharacter in string:
+        if normiecharacter in normiefont:
+            linedcharacter = limedfont[normiefont.index(normiecharacter)]
+            string = string.replace(normiecharacter, limedcharacter)
 
     if message.reply_to_message:
         message.reply_to_message.reply_text(string)
@@ -345,6 +398,7 @@ EIGHTBALL_HANDLER = DisableAbleCommandHandler("8ball", eightball, run_async=True
 TABLE_HANDLER = DisableAbleCommandHandler("table", table, run_async=True)
 SHOUT_HANDLER = DisableAbleCommandHandler("shout", shout, run_async=True)
 WEEBIFY_HANDLER = DisableAbleCommandHandler("weebify", weebify, run_async=True)
+LINIFY_HANDLER = DisableAbleCommandHandler("lined", linify, run_async=True)
 
 dispatcher.add_handler(WEEBIFY_HANDLER)
 dispatcher.add_handler(SHOUT_HANDLER)
@@ -360,6 +414,7 @@ dispatcher.add_handler(RLG_HANDLER)
 dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(EIGHTBALL_HANDLER)
 dispatcher.add_handler(TABLE_HANDLER)
+dispatcher.add_handler(LINIFY_HANDLER)
 
 __mod_name__ = "Fun"
 __command_list__ = [

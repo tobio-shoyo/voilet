@@ -236,6 +236,35 @@ def dev_plus(func):
 
     return is_dev_plus_func
 
+def sudo_plus(func):
+    @wraps(func)
+    def is_drag_plus_func(update, context, *args, **kwargs):
+        user = update.effective_user
+
+        if user.id in SUPPORT_USERS:
+            return func(update, context, *args, **kwargs)
+        if not user:
+            pass
+            except BaseException:
+                pass
+
+
+    return is_drag_plus_func
+
+def ass_plus(func):
+    @wraps(func)
+    def is_ass_plus_func(update, context, *args, **kwargs):
+        user = update.effective_user
+
+        if user.id in WHITELIST_USERS:
+            return func(update, context, *args, **kwargs)
+        if not user:
+            pass
+            except BaseException:
+                pass
+
+    return is_ass_plus_func
+
 
 def connection_status(func):
     @wraps(func)

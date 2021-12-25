@@ -3,8 +3,8 @@ import requests as r
 from zeldris import pbot as app
 from zeldris.utils.errors import capture_err
 
-__mod_name__ = "WebSS"
-__help__ = "`/webss` [URL] - Take A Screenshot Of A Webpage"
+mod_name = "WebSS"
+help = "/webss [URL] - Take A Screenshot Of A Webpage"
 
 
 @app.on_message(filters.command("webss"))
@@ -19,16 +19,14 @@ async def take_ss(_, message):
         await m.edit("**Uploading**")
         try:
                x = r.get(f"https://webshot.amanoteam.com/print?q={url}")
-               if x.status_code != 200:
-                   return
-               else:
-                   await app.send_photo(
-                       message.chat.id,
-                       photo=x,
-                   )
-               except TypeError:
-                   await m.edit("No Such Website.")
-                   return
-               await m.delete()
-           except Exception as e:
-               await message.reply_text(str(e))
+
+               await app.send_photo(
+                   message.chat.id,
+                   photo=x,
+               )
+           except TypeError:
+               await m.edit("No Such Website.")
+               return
+           await m.delete()
+       except Exception as e:
+           await message.reply_text(str(e))

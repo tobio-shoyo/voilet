@@ -19,16 +19,16 @@ async def take_ss(_, message):
         await m.edit("**Uploading**")
         try:
                x = r.get(f"https://webshot.amanoteam.com/print?q={url}")
-        if x.status_code != 200:
-            return
-        else:
-            await app.send_photo(
-                message.chat.id,
-                photo=x,
-            )
-        except TypeError:
-            await m.edit("No Such Website.")
-            return
-        await m.delete()
-    except Exception as e:
-        await message.reply_text(str(e))
+               if x.status_code != 200:
+                   return
+               else:
+                   await app.send_photo(
+                       message.chat.id,
+                       photo=x,
+                   )
+               except TypeError:
+                   await m.edit("No Such Website.")
+                   return
+               await m.delete()
+           except Exception as e:
+               await message.reply_text(str(e))

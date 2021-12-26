@@ -102,6 +102,13 @@ async def fmupromote(_, message):
         )
         await message.reply_text("Sucessfully Full Promoted this user!")
 
+       if " " in  message.text and isinstance(str):
+           title = message.text.replace("/fullpromote", "")
+         
+            try:
+            bot.setChatAdministratorCustomTitle(chat.id, user_id, title)
+
+
     except Exception as e:
         await message.reply_text(str(e))
         e = traceback.format_exc()

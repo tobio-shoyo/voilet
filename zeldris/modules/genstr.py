@@ -85,10 +85,10 @@ async def generate_str(c, m):
         except SessionPasswordNeeded:
            try:
               two_step_code = await c.ask(
-                chat_id=m.chat.id, 
-                text="`🔐 This account have two-step verification code.\nPlease enter your second factor authentication code.`\nPress /cancel to Cancel.",
-                timeout=300
-            )
+                   chat_id=m.chat.id, 
+                   text="`🔐 This account have two-step verification code.\nPlease enter your second factor authentication code.`\nPress /cancel to Cancel.",
+                   timeout=300
+                 )
         except TimeoutError:
             await m.reply("**⏰ TimeOut Error:** You reached Time limit of 5 min.\nPress /start to create again.")
             return

@@ -210,9 +210,6 @@ def migrate_chat(old_chat_id, new_chat_id):
         SESSION.commit()
 
 
-
-
-
 def del_user(user_id):
     with INSERTION_LOCK:
         curr = SESSION.query(Users).get(user_id)

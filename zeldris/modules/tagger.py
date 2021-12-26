@@ -7,7 +7,6 @@ from zeldris import client as telethn
 from zeldris.events import register as nobara
 
 
-
 @nobara(pattern="^/tagall ?(.*)")
 async def _(event):
     if event.fwd_from:

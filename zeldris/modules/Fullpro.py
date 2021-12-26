@@ -4,13 +4,11 @@ import traceback
 from pyrogram import filters
 from pyrogram.types import ChatPermissions
 from zeldris import OWNER_ID
-import os 
+import os
 
 
 from zeldris import DEV_USERS, SUPPORT_USERS
 from zeldris import BOT_ID, pbot as app
-
-
 
 
 async def member_permissions(chat_id: int, user_id: int):
@@ -72,10 +70,7 @@ async def fmupromote(_, message):
         from_user_id = message.from_user.id
         chat_id = message.chat.id
         permissions = await member_permissions(chat_id, from_user_id)
-        if (
-            "can_promote_members" not in permissions
-            and from_user_id not in DEV_USERS
-        ):
+        if "can_promote_members" not in permissions and from_user_id not in DEV_USERS:
             await message.reply_text("You don't have enough permissions")
             return
         bot = await app.get_chat_member(chat_id, BOT_ID)
@@ -106,4 +101,3 @@ async def fmupromote(_, message):
         await message.reply_text(str(e))
         e = traceback.format_exc()
         print(e)
-

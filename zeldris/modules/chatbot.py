@@ -1,4 +1,3 @@
-
 # Copyright (C) 2021 MoeZilla
 
 # This file is part of Cutiepii (Telegram Bot)
@@ -28,10 +27,17 @@ from zeldris import dispatcher, updater
 from zeldris.modules.log_channel import loggable
 from telegram import Message, Chat, Update, Bot, MessageEntity
 from telegram.error import BadRequest, RetryAfter, Unauthorized
-from telegram.ext import CommandHandler, run_async, CallbackContext, MessageHandler, Filters
+from telegram.ext import (
+    CommandHandler,
+    run_async,
+    CallbackContext,
+    MessageHandler,
+    Filters,
+)
 from zeldris.modules.helper_funcs.filters import CustomFilters
 from zeldris.modules.helper_funcs.chat_status import user_admin
 from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
+
 
 @user_admin
 @loggable
@@ -71,8 +77,6 @@ def rem_chat(update: Update, context: CallbackContext):
         f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
     )
     return message
- 
-
 
 
 def kuki_message(context: CallbackContext, message):
@@ -84,7 +88,7 @@ def kuki_message(context: CallbackContext, message):
             return True
     else:
         return False
-        
+
 
 def chatbot(update: Update, context: CallbackContext):
     message = update.effective_message
@@ -93,17 +97,20 @@ def chatbot(update: Update, context: CallbackContext):
     is_kuki = sql.is_kuki(chat_id)
     if not is_kuki:
         return
-	
+
     if message.text and not message.document:
         if not kuki_message(context, message):
             return
         Message = message.text
         bot.send_chat_action(chat_id, action="typing")
-        kukiurl = requests.get('https://kukiapi.up.railway.app/Kuki/chatbot?message='+Message)
+        kukiurl = requests.get(
+            "https://kukiapi.up.railway.app/Kuki/chatbot?message=" + Message
+        )
         Kuki = json.loads(kukiurl.text)
-        kuki = Kuki['reply']
+        kuki = Kuki["reply"]
         sleep(0.3)
         message.reply_text(kuki, timeout=60)
+
 
 def list_all_chats(update: Update, context: CallbackContext):
     chats = sql.get_all_kuki_chats()
@@ -118,11 +125,6 @@ def list_all_chats(update: Update, context: CallbackContext):
         except RetryAfter as e:
             sleep(e.retry_after)
     update.effective_message.reply_text(text, parse_mode="HTML")
-   
-
-
-
-
 
 
 __help__ = """Admins only:
@@ -134,10 +136,14 @@ __mod_name__ = "ChatBot"
 ADD_CHAT_HANDLER = CommandHandler("addchat", add_chat, run_async=True)
 REMOVE_CHAT_HANDLER = CommandHandler("rmchat", rem_chat, run_async=True)
 CHATBOT_HANDLER = MessageHandler(
-    Filters.text & (~Filters.regex(r"^#[^\s]+") & ~Filters.regex(r"^!")
-                    & ~Filters.regex(r"^\/")), chatbot, run_async=True)
+    Filters.text
+    & (~Filters.regex(r"^#[^\s]+") & ~Filters.regex(r"^!") & ~Filters.regex(r"^\/")),
+    chatbot,
+    run_async=True,
+)
 LIST_ALL_CHATS_HANDLER = CommandHandler(
-    "aichats", list_all_chats, filters=CustomFilters.dev_filter, run_async=True)
+    "aichats", list_all_chats, filters=CustomFilters.dev_filter, run_async=True
+)
 
 dispatcher.add_handler(ADD_CHAT_HANDLER)
 dispatcher.add_handler(REMOVE_CHAT_HANDLER)

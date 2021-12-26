@@ -217,7 +217,8 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
 
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
-                update.effective_message.reply_photo("https://telegra.ph/file/64795f3c6891d696b63bb.jpg",
+                update.effective_message.reply_photo(
+                    "https://telegra.ph/file/64795f3c6891d696b63bb.jpg",
                     "Monarch Entered The Chat!!!",
                     reply_to_message_id=reply,
                 )

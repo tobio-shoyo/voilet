@@ -427,7 +427,7 @@ bubbfont = [
     "ⓦ",
     "ⓧ",
     "ⓨ",
-    "ⓩ"
+    "ⓩ",
 ]
 
 fbubbfont = [
@@ -456,7 +456,7 @@ fbubbfont = [
     "🅦",
     "🅧",
     "🅨",
-    "🅩"
+    "🅩",
 ]
 
 fsquarefont = [
@@ -485,7 +485,7 @@ fsquarefont = [
     "🆆",
     "🆇",
     "🆈",
-    "🆉"
+    "🆉",
 ]
 
 
@@ -514,6 +514,7 @@ def weebify(update: Update, context: CallbackContext):
     else:
         message.reply_text(string)
 
+
 def linify(update: Update, context: CallbackContext):
     args = context.args
     message = update.effective_message
@@ -538,6 +539,7 @@ def linify(update: Update, context: CallbackContext):
         message.reply_to_message.reply_text(string)
     else:
         message.reply_text(string)
+
 
 def latinify(update: Update, context: CallbackContext):
     args = context.args
@@ -564,6 +566,7 @@ def latinify(update: Update, context: CallbackContext):
     else:
         message.reply_text(string)
 
+
 def squarify(update: Update, context: CallbackContext):
     args = context.args
     message = update.effective_message
@@ -588,6 +591,7 @@ def squarify(update: Update, context: CallbackContext):
         message.reply_to_message.reply_text(string)
     else:
         message.reply_text(string)
+
 
 def fsquarify(update: Update, context: CallbackContext):
     args = context.args
@@ -614,6 +618,7 @@ def fsquarify(update: Update, context: CallbackContext):
     else:
         message.reply_text(string)
 
+
 def bubbify(update: Update, context: CallbackContext):
     args = context.args
     message = update.effective_message
@@ -638,6 +643,7 @@ def bubbify(update: Update, context: CallbackContext):
         message.reply_to_message.reply_text(string)
     else:
         message.reply_text(string)
+
 
 def fbubbify(update: Update, context: CallbackContext):
     args = context.args
@@ -664,6 +670,7 @@ def fbubbify(update: Update, context: CallbackContext):
     else:
         message.reply_text(string)
 
+
 def bluify(update: Update, context: CallbackContext):
     args = context.args
     message = update.effective_message
@@ -688,7 +695,6 @@ def bluify(update: Update, context: CallbackContext):
         message.reply_to_message.reply_text(string)
     else:
         message.reply_text(string)
-
 
 
 __help__ = """
@@ -798,5 +804,5 @@ __handlers__ = [
     FSQUARIFY_HANDLER,
     SQUARIFY_HANDLER,
     BUBBIFY_HANDLER,
-    FBUBBIFY_HANDLER
+    FBUBBIFY_HANDLER,
 ]

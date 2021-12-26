@@ -105,15 +105,11 @@ def gban(update, context):
         return
 
     if int(user_id) in SUPPORT_USERS:
-        message.reply_text(
-            "OOOH someone's trying to gban a dragon! *grabs popcorn*"
-        )
+        message.reply_text("OOOH someone's trying to gban a dragon! *grabs popcorn*")
         return
 
     if int(user_id) in WHITELIST_USERS:
-        message.reply_text(
-            "OOOH someone's trying to gban a Assassin! *grabs popcorn*"
-        )
+        message.reply_text("OOOH someone's trying to gban a Assassin! *grabs popcorn*")
         return
 
     if user_id in (777000, 1087968824):

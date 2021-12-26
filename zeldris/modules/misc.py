@@ -159,20 +159,16 @@ def info(update, context):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += ("\n\nThe Disaster level of this person is <b>'MONARCH'</b>.")
+        text += "\n\nThe Disaster level of this person is <b>'MONARCH'</b>."
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += ("\n\nThis user is  the <b>'Villain'</b>.")
+        text += "\n\nThis user is  the <b>'Villain'</b>."
         disaster_level_present = True
     elif user.id in SUPPORT_USERS:
-        text += (
-            "\n\n This user is the <b>'Dragon'</b>"
-        )
+        text += "\n\n This user is the <b>'Dragon'</b>"
         disaster_level_present = True
     elif user.id in WHITELIST_USERS:
-        text += (
-            "\n\n This user is the <b>'Assassin'</b>"
-        )
+        text += "\n\n This user is the <b>'Assassin'</b>"
         disaster_level_present = True
 
     if disaster_level_present:
@@ -464,6 +460,7 @@ def sudo_ids(update: Update, context: CallbackContext):
             pass
     update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
 
+
 def dev_ids(update: Update, context: CallbackContext):
     bot = context.bot
     reply = "<b>Known VILLAIN Disasters :</b>\n"
@@ -475,6 +472,7 @@ def dev_ids(update: Update, context: CallbackContext):
         except TelegramError:
             pass
     update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
+
 
 def support_ids(update: Update, context: CallbackContext):
     bot = context.bot

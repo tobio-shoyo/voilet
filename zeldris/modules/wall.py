@@ -5,14 +5,14 @@ import random
 from pyrogram import filters
 from zeldris import pbot as bot
 
-api_key = ('RIZMUN-PTUQTE-ZDXUWJ-AGZJVR-ARQ') # get it from @arqrobot
+api_key = "RIZMUN-PTUQTE-ZDXUWJ-AGZJVR-ARQ"  # get it from @arqrobot
 api_url = "https://thearq.tech"
 
 
-@bot.on_message(filters.command('wall'))
-async def main(_,message):
+@bot.on_message(filters.command("wall"))
+async def main(_, message):
     session = ClientSession()
-    wall_ = message.text.replace(message.text.split(' ')[0], '')
+    wall_ = message.text.replace(message.text.split(" ")[0], "")
     arq = ARQ(api_url, api_key, session)
     results = await arq.wall(wall_)
     wallpaper = results.result

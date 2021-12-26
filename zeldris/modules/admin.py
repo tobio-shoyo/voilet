@@ -57,13 +57,12 @@ def promote(update, context):
     user_id = extract_user(message, args)
 
     if user_id in DEV_USERS:
-       pass
+        pass
 
     if user_can_promote(chat, user, bot.id) is False:
         message.reply_text("You don't have enough rights to promote someone!")
         return ""
 
-    
     if not user_id:
         message.reply_text("mention one.... 🤷🏻‍♂.")
         return ""
@@ -128,7 +127,6 @@ def promote(update, context):
             mention_html(user_member.user.id, user_member.user.first_name),
         )
     )
-
 
 
 @bot_admin

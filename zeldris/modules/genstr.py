@@ -89,32 +89,32 @@ async def generate_str(c, m):
                    text="`🔐 This account have two-step verification code.\nPlease enter your second factor authentication code.`\nPress /cancel to Cancel.",
                    timeout=300
                  )
-        except TimeoutError:
-            await m.reply("**⏰ TimeOut Error:** You reached Time limit of 5 min.\nPress /start to create again.")
-            return
-        if await is_cancel(m, two_step_code.text):
-            return
-        new_code = two_step_code.text
-        await two_step_code.delete()
-        await two_step_code.request.delete()
-        try:
-            await cli.check_password(new_code)
-        except Exception as e:
-            await m.reply(f"**⚠️ ERROR:** `{str(e)}`")
-            return
-        except Exception as e:
-            await c.send_message(m.chat.id ,f"**⚠️ ERROR:** `{str(e)}`")
-            return
-        try:
-            session_string = await client.export_session_string()
-            await client.send_message(m.chy.id, f"**Your String Session 👇**\n\n`{session_string}`\n\nThanks For using {(await c.get_me()).mention(style='md')}")
-        except Exception as e:
-            await c.send_message(m.chat.id ,f"**⚠️ ERROR:** `{str(e)}`")
-            return
-        try:
-            await client.stop()
-        except:
-            pass
+           except TimeoutError:
+              await m.reply("**⏰ TimeOut Error:** You reached Time limit of 5 min.\nPress /start to create again.")
+              return
+           if await is_cancel(m, two_step_code.text):
+              return
+           new_code = two_step_code.text
+           await two_step_code.delete()
+           await two_step_code.request.delete()
+           try:
+               await cli.check_password(new_code)
+           except Exception as e:
+               await m.reply(f"**⚠️ ERROR:** `{str(e)}`")
+               return
+           except Exception as e:
+               await c.send_message(m.chat.id ,f"**⚠️ ERROR:** `{str(e)}`")
+               return
+           try:
+               session_string = await client.export_session_string()
+               await client.send_message(m.chy.id, f"**Your String Session 👇**\n\n`{session_string}`\n\nThanks For using {(await c.get_me()).mention(style='md')}")
+           except Exception as e:
+               await c.send_message(m.chat.id ,f"**⚠️ ERROR:** `{str(e)}`")
+               return
+           try:
+               await client.stop()
+           except:
+               pass
 
 async def is_cancel(msg: Message, text: str):
     if text.startswith("/cancel"):

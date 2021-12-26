@@ -23,7 +23,7 @@ from telegram import Chat, ChatMember, Update
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import CallbackContext
 
-from zeldris import (
+from violet import (
     DEL_CMDS,
     DEV_USERS,
     SUPPORT_USERS,

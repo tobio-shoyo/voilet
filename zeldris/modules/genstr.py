@@ -71,20 +71,20 @@ async def generate_str(c, m):
                return
         if await is_cancel(m, otp.text):
                return
-    otp_code = otp.text
-    await otp.delete()
-    await otp.request.delete()
-    try:
-        await cli.sign_in(phone_number, code.phone_code_hash, phone_code=' '.join(str(otp_code)))
-    except PhoneCodeInvalid:
-        await m.reply("**📵 Invalid Code**\n\nPress /genstr to create again.")
-        return 
-    except PhoneCodeExpired:
-        await m.reply("**⌚ Code is Expired**\n\nPress /genstr to create again.")
-        return
-    except SessionPasswordNeeded:
+        otp_code = otp.text
+        await otp.delete()
+        await otp.request.delete()
         try:
-            two_step_code = await c.ask(
+            await cli.sign_in(phone_number, code.phone_code_hash, phone_code=' '.join(str(otp_code)))
+        except PhoneCodeInvalid:
+            await m.reply("**📵 Invalid Code**\n\nPress /genstr to create again.")
+            return 
+        except PhoneCodeExpired:
+            await m.reply("**⌚ Code is Expired**\n\nPress /genstr to create again.")
+            return
+        except SessionPasswordNeeded:
+           try:
+              two_step_code = await c.ask(
                 chat_id=m.chat.id, 
                 text="`🔐 This account have two-step verification code.\nPlease enter your second factor authentication code.`\nPress /cancel to Cancel.",
                 timeout=300

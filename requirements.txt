@@ -49,3 +49,4 @@ dateparser
 dnspython
 hachoir
 numpy
+nekos.py

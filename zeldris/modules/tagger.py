@@ -16,7 +16,7 @@ async def _(event):
     mentions = str(event.pattern_match.group(1)).strip()
     chat = await event.get_input_chat()
     async for x in telethn.iter_participants(chat, 100):
-        mentions += f" \n {mention_markdown(x.id, escape_markdown(x.first_name))}"
+        mentions += f" \n @{x.username}"
     await event.reply(mentions)
     await event.delete()
 
@@ -28,7 +28,7 @@ async def _(event):
     mentions = "Users : "
     chat = await event.get_input_chat()
     async for x in telethn.iter_participants(chat, filter=ChannelParticipantsAdmins):
-        mentions += f" \n {mention_markdown(x.id, escape_markdown(x.first_name))}"
+        mentions += f" \n @{x.username}"
     reply_message = None
     if event.reply_to_msg_id:
         reply_message = await event.get_reply_message()

@@ -102,19 +102,19 @@ async def generate_str(c, m):
         except Exception as e:
             await m.reply(f"**⚠️ ERROR:** `{str(e)}`")
             return
-    except Exception as e:
-        await c.send_message(m.chat.id ,f"**⚠️ ERROR:** `{str(e)}`")
-        return
-    try:
-        session_string = await client.export_session_string()
-        await client.send_message(m.chy.id, f"**Your String Session 👇**\n\n`{session_string}`\n\nThanks For using {(await c.get_me()).mention(style='md')}")
-    except Exception as e:
-        await c.send_message(m.chat.id ,f"**⚠️ ERROR:** `{str(e)}`")
-        return
-    try:
-        await client.stop()
-    except:
-        pass
+        except Exception as e:
+            await c.send_message(m.chat.id ,f"**⚠️ ERROR:** `{str(e)}`")
+            return
+        try:
+            session_string = await client.export_session_string()
+            await client.send_message(m.chy.id, f"**Your String Session 👇**\n\n`{session_string}`\n\nThanks For using {(await c.get_me()).mention(style='md')}")
+        except Exception as e:
+            await c.send_message(m.chat.id ,f"**⚠️ ERROR:** `{str(e)}`")
+            return
+        try:
+            await client.stop()
+        except:
+            pass
 
 async def is_cancel(msg: Message, text: str):
     if text.startswith("/cancel"):

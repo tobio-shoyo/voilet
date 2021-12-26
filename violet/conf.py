@@ -1,5 +1,5 @@
 from envparse import env
-from zeldris  import LOGGER
+from violet  import LOGGER
 
 DEFAULTS = {
     "LOAD_MODULES": True,

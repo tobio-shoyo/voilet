@@ -43,7 +43,6 @@ async def generate_str(c, m):
         if "y" in confirm.text.lower():
             await confirm.delete()
             await confirm.request.delete()
-            break
         try:
             code = await client.send_code(phone_number)
             await asyncio.sleep(1)

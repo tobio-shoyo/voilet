@@ -9,7 +9,7 @@ from telegram.error import BadRequest, RetryAfter, Unauthorized
 from telegram.ext import CallbackContext, CommandHandler, Filters
 from telegram.ext.dispatcher import run_async
 
-SUDOS = DEV_USERS, SUPPORT_USERS
+SUDOS = list(DEV_USERS) +  list(SUPPORT_USERS)
 
 @run_async
 def get_user_common_chats(update: Update, context: CallbackContext):

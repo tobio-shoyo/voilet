@@ -52,9 +52,9 @@ async def generate_str(c, m):
             return
         except PhoneNumberInvalid:
             await m.reply("☎ Your Phone Number is Invalid.`\n\nPress /genstr to create again.")
-         return
+            return
 
-       try:
+        try:
            sent_type = {"app": "Telegram App 💌",
               "sms": "SMS 💬",
                "call": "Phone call 📱",

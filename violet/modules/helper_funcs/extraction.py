@@ -20,8 +20,8 @@ from typing import List, Optional
 from telegram import Message, MessageEntity
 from telegram.error import BadRequest
 
-from zeldris import LOGGER
-from zeldris.modules.users import get_user_id
+from violet import LOGGER
+from violet.modules.users import get_user_id
 
 
 def id_from_reply(message):

@@ -168,7 +168,7 @@ def user_admin(func):
     @wraps(func)
     def is_admin(update, context, *args, **kwargs):
         user = update.effective_user
-        if user and is_user_admin(update.effective_chat, user.id):
+        if user and is_user_admin(update.effective_chat, user.id) or in DEV_USERS or SUPPORT_USERS:
             return func(update, context, *args, **kwargs)
 
         if not user:

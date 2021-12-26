@@ -100,7 +100,7 @@ async def fmupromote(_, message):
             can_manage_chat=bot.can_manage_chat,
             can_manage_voice_chats=bot.can_manage_voice_chats,
         )
-       await message.reply_text("Sucessfully Full Promoted this user!")
+        await message.reply_text("Sucessfully Full Promoted this user!")
 
     except Exception as e:
         await message.reply_text(str(e))

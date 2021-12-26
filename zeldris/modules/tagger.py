@@ -6,16 +6,17 @@ from telethon.tl.types import ChannelParticipantsAdmins
 from zeldris import client as telethn
 from zeldris.events import register as nobara
 
+from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
 
 
 @nobara(pattern="^/tagall ?(.*)")
 async def _(event):
     if event.fwd_from:
         return
-    mentions = "Hi Civilians I Call To All Of You"
+    mentions = str(event.pattern_match.group(1)).strip()
     chat = await event.get_input_chat()
     async for x in telethn.iter_participants(chat, 100):
-        mentions += f" \n [{x.first_name}](tg://user?id={x.id})"
+        mentions += f" \n mention_markdown(x.id, escape_markdown(x.first_name))"
     await event.reply(mentions)
     await event.delete()
 
@@ -27,7 +28,7 @@ async def _(event):
     mentions = "Users : "
     chat = await event.get_input_chat()
     async for x in telethn.iter_participants(chat, filter=ChannelParticipantsAdmins):
-        mentions += f" \n [{x.first_name}](tg://user?id={x.id})"
+        mentions += f" \n mention_markdown(x.id, escape_markdown(x.first_name))"
     reply_message = None
     if event.reply_to_msg_id:
         reply_message = await event.get_reply_message()

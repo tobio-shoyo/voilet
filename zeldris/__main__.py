@@ -6,12 +6,12 @@ import time
 import re
 import sys
 import traceback
-import zeldris.modules.sql.users_sql as sql
+import violet.modules.sql.users_sql as sql
 
 
 from sys import argv
 from typing import Optional
-from zeldris import (
+from violet import (
     ALLOW_EXCL,
     CERT_PATH,
     DONATION_LINK,
@@ -30,12 +30,12 @@ from zeldris import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from zeldris.events import register
-from zeldris.modules import ALL_MODULES
-from zeldris.modules.helper_funcs.chat_status import is_user_admin
-from zeldris.modules.helper_funcs.alternate import typing_action
-from zeldris.modules.helper_funcs.misc import paginate_modules
-from zeldris.modules.disable import DisableAbleCommandHandler
+from violet.events import register
+from violet.modules import ALL_MODULES
+from violet.modules.helper_funcs.chat_status import is_user_admin
+from violet.modules.helper_funcs.alternate import typing_action
+from violet.modules.helper_funcs.misc import paginate_modules
+from violet.modules.disable import DisableAbleCommandHandler
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -153,7 +153,7 @@ USER_SETTINGS = {}
 GDPR = []
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("zeldris.modules." + module_name)
+    imported_module = importlib.import_module("violet.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 

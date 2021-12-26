@@ -44,30 +44,30 @@ async def generate_str(c, m):
             await confirm.delete()
             await confirm.request.delete()
             break
-    try:
-        code = await client.send_code(phone_number)
-        await asyncio.sleep(1)
-    except FloodWait as e:
-        await m.reply(f"__Sorry to say you that you have floodwait of {e.x} Seconds 😞__")
-        return
-    except PhoneNumberInvalid:
-        await m.reply("☎ Your Phone Number is Invalid.`\n\nPress /genstr to create again.")
-        return
+        try:
+            code = await client.send_code(phone_number)
+            await asyncio.sleep(1)
+        except FloodWait as e:
+            await m.reply(f"__Sorry to say you that you have floodwait of {e.x} Seconds 😞__")
+            return
+        except PhoneNumberInvalid:
+            await m.reply("☎ Your Phone Number is Invalid.`\n\nPress /genstr to create again.")
+         return
 
-    try:
-        sent_type = {"app": "Telegram App 💌",
-            "sms": "SMS 💬",
-            "call": "Phone call 📱",
+       try:
+           sent_type = {"app": "Telegram App 💌",
+              "sms": "SMS 💬",
+               "call": "Phone call 📱",
             "flash_call": "phone flash call 📲"
-        }[code.type]
-        otp = await c.ask(
-            chat_id=m.chat.id,
-            text=(f"I had sent an OTP to the number `{phone_number}` through {sent_type}\n\n"
+             }[code.type]
+           otp = await c.ask(
+               chat_id=m.chat.id,
+               text=(f"I had sent an OTP to the number `{phone_number}` through {sent_type}\n\n"
                   "Please enter the OTP in the format `1 2 3 4 5` __(provied white space between numbers)__\n\n"
                   "If Bot not sending OTP then try /genstr to restart the module.\n"
                   "Press /cancel to Cancel."), timeout=300)
     except TimeoutError:
-        await m.reply("**⏰ TimeOut Error:** You reached Time limit of 5 min.\nPress /genstr to create again.")
+          await m.reply("**⏰ TimeOut Error:** You reached Time limit of 5 min.\nPress /genstr to create again.")
         return
     if await is_cancel(m, otp.text):
         return

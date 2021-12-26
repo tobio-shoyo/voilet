@@ -4,7 +4,7 @@ from zeldris import DEV_USERS, SUPPORT_USERS, WHITELIST_USERS, pbot as app
 from zeldris.modules.wall import arq
 from zeldris.utlis.error import capture_err
 from zeldris.modules.helper_funcs.chun import adminsOnly
-from zeldris.modules.mongo.nsfw_mongo import is_nsfw_on, nsfw_off, nsfw_on
+from zeldris.modules.sql.nsfw_sql import is_nsfw, rem_nsfw, set_nsfw
 
 SUDOS = DEV_USERS, SUPPORT_USERS, WHITELIST_USERS
 
@@ -54,7 +54,7 @@ async def get_file_id_from_message(message):
 )
 @capture_err
 async def detect_nsfw(_, message):
-    if not  is_nsfw_on(message.chat.id):
+    if not  is_nsfw(message.chat.id):
         return
     if not message.from_user:
         return
@@ -151,12 +151,12 @@ async def nsfw_enable_disable(_, message):
     status = status.lower()
     chat_id = message.chat.id
     if status == "on" or status == "yes":
-        await nsfw_on(chat_id)
+        await rem_nsfw(chat_id)
         await message.reply_text(
             "Enabled AntiNSFW System. I will Delete Messages Containing Inappropriate Content."
         )
     elif status == "off" or status == "no":
-        await nsfw_off(chat_id)
+        await set_nsfw(chat_id)
         await message.reply_text("Disabled AntiNSFW System.")
     else:
         await message.reply_text(

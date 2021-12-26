@@ -1,7 +1,7 @@
 from os import remove
 from pyrogram import filters
 from zeldris import DEV_USERS, SUPPORT_USERS, WHITELIST_USERS, pbot as app
-from zeldris.modules.Fullpro import arq
+from zeldris.modules.wall import arq
 from zeldris.utlis.error import capture_err
 from zeldris.modules.helper_funcs.chun import adminsOnly
 from zeldris.modules.mongo.nsfw_mongo import is_nsfw_on, nsfw_off, nsfw_on

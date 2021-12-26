@@ -7,13 +7,13 @@ from zeldris import pbot as bot
 
 api_key = ('RIZMUN-PTUQTE-ZDXUWJ-AGZJVR-ARQ') # get it from @arqrobot
 api_url = "https://thearq.tech"
+session = ClientSession()
 arq = ARQ(api_url, api_key, session)
 
 
 @bot.on_message(filters.command('wall'))
 async def main(_,message):
-    session = ClientSession()
-    wall_ = message.text.replace(message.text.split(' ')[0], '')
+        wall_ = message.text.replace(message.text.split(' ')[0], '')
     results = await arq.wall(wall_)
     wallpaper = results.result
     x = random.choice(wallpaper)

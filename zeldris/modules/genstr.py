@@ -66,11 +66,11 @@ async def generate_str(c, m):
                   "Please enter the OTP in the format `1 2 3 4 5` __(provied white space between numbers)__\n\n"
                   "If Bot not sending OTP then try /genstr to restart the module.\n"
                   "Press /cancel to Cancel."), timeout=300)
-    except TimeoutError:
-          await m.reply("**⏰ TimeOut Error:** You reached Time limit of 5 min.\nPress /genstr to create again.")
-        return
-    if await is_cancel(m, otp.text):
-        return
+        except TimeoutError:
+               await m.reply("**⏰ TimeOut Error:** You reached Time limit of 5 min.\nPress /genstr to create again.")
+               return
+        if await is_cancel(m, otp.text):
+               return
     otp_code = otp.text
     await otp.delete()
     await otp.request.delete()

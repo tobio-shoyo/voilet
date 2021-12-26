@@ -28,8 +28,9 @@ def get_user_common_chats(update: Update, context: CallbackContext):
     for chat in common_list:
         try:
             chat_name = bot.get_chat(chat).title
+            chat_limk = bot.get_chat(chat).username
             sleep(0.3)
-            text += f"• <code>{chat_name}</code>\n"
+            text += f"• Name :- {chat_name} \n Username :- @{chat_limk} \n"
         except BadRequest:
             pass
         except Unauthorized:

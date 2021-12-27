@@ -81,6 +81,7 @@ def sauce(update: Update, context: CallbackContext) -> None:
         update.message.reply_text(
             text_blob,
             reply_markup=markup,
+            parse_mode=ParseMode.HTML
         )
 
 __help__ = """

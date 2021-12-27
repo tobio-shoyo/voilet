@@ -90,7 +90,7 @@ You can give multiple codes, and it will fetch all those doujins.
 If you don't have an exception set for your chat, it'll send it to you in your private chat.
 """
 
-__mod_name__ = "nhentai"
+__mod_name__ = "Nhentai"
 
 # create handlers
 dispatcher.add_handler(CommandHandler("sauce", sauce, run_async=True))

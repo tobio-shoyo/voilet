@@ -4,7 +4,7 @@ from typing import Optional
 import zeldris.modules.sql.blsticker_sql as sql
 from zeldris import LOGGER, dispatcher
 from zeldris.modules.connection import connected
-from zedlris.modules.disable import DisableAbleCommandHandler
+from zeldris.modules.disable import DisableAbleCommandHandler
 from zeldris.modules.helper_funcs.alternate import send_message
 from zeldris.modules.helper_funcs.chat_status import user_admin, user_not_admin
 from zeldris.modules.helper_funcs.misc import split_message

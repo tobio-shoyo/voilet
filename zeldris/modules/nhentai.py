@@ -86,8 +86,8 @@ def sauce(update: Update, context: CallbackContext) -> None:
             ),
         )
 
-        else:
-             update.message.reply_html(text=text_blob, reply_markup=markup)
+       elif exception == "group":
+         update.message.reply_html(text=text_blob, reply_markup=markup)
 
 __help__ = """
 - /sauce `<digits list>` : Read a doujin from nhentai.net in telegram instant preview by giving it's code. 

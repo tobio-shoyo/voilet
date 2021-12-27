@@ -3,42 +3,15 @@
 <p>
 
 <h1 align="center">
-    Zeldris Robot
+    Violet Robot
 </h1>
 
 <p align="center">
-<a href="https://t.me/IDNCoderX"> <img src="https://img.shields.io/badge/Support-Chat-blue?&logo=telegram" alt="Support Chat" /> </a>
-<a href="https://t.me/IDNCoder"> <img src="https://img.shields.io/badge/Update-Channel-blue?&logo=telegram" alt="Update Channel" /> </a><br>
-<a href="https://t.me/ZeldrisRobot"> <img src="https://img.shields.io/badge/Zeldris-Robot-blue?&logo=telegram" alt="Zeldris on Telegram" /> </a><br>
-<a href="https://www.codacy.com/gh/IDN-C-X/ZeldrisRobot/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=IDN-C-X/ZeldrisRobot&amp;utm_campaign=Badge_Grade"><img src="https://app.codacy.com/project/badge/Grade/b290cfb10337403ba1e8d29fd474d39b"/></a><a href="https://www.codefactor.io/repository/github/idn-c-x/zeldrisrobot"><img src="https://www.codefactor.io/repository/github/idn-c-x/zeldrisrobot/badge" alt="CodeFactor" /></a><br>
-<a href="https://deepsource.io/gh/IDN-C-X/ZeldrisRobot/?ref=repository-badge"><img src="https://static.deepsource.io/deepsource-badge-light-mini.svg" alt="DeepSource"></a><br>
-<a href="https://python-telegram-bot.org"> <img src="https://img.shields.io/badge/PTB-13.5-brightgreen?&style=flat-round&logo=github" alt="Python Telegram Bot" /> </a>
-<a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a><br>
-<a href="https://docs.telethon.dev"> <img src="https://img.shields.io/badge/Telethon-1.16.4-brightgreen?&style=flat-round&logo=github" alt="Telethon" /> </a>
-<a href="https://docs.python.org"> <img src="https://img.shields.io/badge/Python-3.9.7-brightgreen?&style=flat-round&logo=python" alt="Python" /> </a><br>
-<a href="https://github.com/IDN-C-X"> <img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103" alt="Open Source" /> </a>
-<a href="https://GitHub.com/IDN-C-X/ZeldrisRobot"> <img src="https://img.shields.io/badge/Maintained-Yes-brightgreen.svg" alt="Maintenance" /> </a><br>
-<a href="https://github.com/IDN-C-X/ZeldrisRobot/blob/main/LICENSE"> <img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License" /> </a>
-<a href="https://makeapullrequest.com"> <img src="https://img.shields.io/badge/PRs-Welcome-blue.svg?style=flat-round" alt="PRs" /> </a>
+<a href="https://t.me/Villainevil_support"> <img src="https://img.shields.io/badge/Support-Chat-blue?&logo=telegram" alt="Support Chat" /> </a>
+<a href="https://t.me/Dabi_Updates"> <img src="https://img.shields.io/badge/Update-Channel-blue?&logo=telegram" alt="Update Channel" /> </a><br>
+<a href="https://t.me/Voilet_Probot"> <img src="https://img.shields.io/badge/Violet-Robot-blue?&logo=telegram" alt="Violet on Telegram" /> </a><br>
 </p>
 
-<p align="center">
-<a href="https://github.com/IDN-C-X/ZeldrisRobot/fork">
-    <img src="https://img.shields.io/github/forks/IDN-C-X/ZeldrisRobot?label=Forks&style=social">
-</a><br>
-<a href="https://github.com/IDN-C-X/ZeldrisRobot/stargazers">
-    <img src="https://img.shields.io/github/stars/IDN-C-X/ZeldrisRobot?label=Stars&style=social">
-</a><br>
-<a href="https://github.com/IDN-C-X/ZeldrisRobot/issues">
-    <img src="https://img.shields.io/github/issues/IDN-C-X/ZeldrisRobot?label=Issues&style=social&logo=github">
-</a><br>
-<a href="https://github.com/IDN-C-X/ZeldrisRobot/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/IDN-C-X/ZeldrisRobot?label=Contributors&style=social&logo=github">
-</a><br>
-<a href="https://github.com/IDN-C-X/ZeldrisRobot/archive/refs/heads/main.zip">
-    <img src="https://img.shields.io/github/repo-size/IDN-C-X/ZeldrisRobot?label=Repo Size&style=social&logo=github">
-</a>
-</p>
 
 **A modular Telegram Python bot running on python3 with a sqlalchemy, redis, telethon.**
 
@@ -181,10 +154,10 @@ anything.
 - [Saitama](https://github.com/AnimeKaizoku/SaitamaRobot) for anime modules and other stuffs.
 - [Kigyō](https://github.com/AnimeKaizoku/EnterpriseALRobot) for greetings modules.
 - [UserIndoBot](https://github.com/userbotindo/UserIndoBot) for any other stuffs.
-- Thanks to Everyone who has [contributed](https://github.com/IDN-C-X/ZeldrisRobot/graphs/contributors) to this Project!
+- Thanks to Everyone who has [contributed](https://github.com/AuraMoon55/Violet/graphs/contributors) to this Project!
 
 ## Projects!
 
 ```
-Zeldris is part of the [IDNCoder](https://github.com/IDN-C-X) project.
+Violet is part of the [Hunters Association](https://github.com/orgs/The-hunter-association) project.
 ```

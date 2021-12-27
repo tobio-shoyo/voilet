@@ -80,9 +80,7 @@ def sauce(update: Update, context: CallbackContext) -> None:
         # send message
         update.message.reply_text(
             "Let's enjoy this together, without anybody else distracting us...",
-            reply_markup=InlineKeyboardMarkup.from_button(
-                InlineKeyboardButton(text="Go to Private Chat", url=context.bot.link)
-            ),
+            reply_markup=markup,
         )
 
 __help__ = """

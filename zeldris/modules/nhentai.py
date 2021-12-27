@@ -78,15 +78,12 @@ def sauce(update: Update, context: CallbackContext) -> None:
         markup = InlineKeyboardMarkup.from_button(InlineKeyboardButton(text="Link to nHentai", url=doujin.url))
 
         # send message
-        if exception == "private":
         update.message.reply_text(
             "Let's enjoy this together, without anybody else distracting us...",
             reply_markup=InlineKeyboardMarkup.from_button(
                 InlineKeyboardButton(text="Go to Private Chat", url=context.bot.link)
             ),
         )
-       elif exception == "group":
-       update.message.reply_html(text=text_blob, reply_markup=markup)
 
 __help__ = """
 - /sauce `<digits list>` : Read a doujin from nhentai.net in telegram instant preview by giving it's code. 

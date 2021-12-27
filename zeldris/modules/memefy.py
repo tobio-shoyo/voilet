@@ -1,5 +1,3 @@
-*Stdout*
-`
 import os
 import textwrap
 
@@ -194,4 +192,4 @@ async def drawText(image_path, text):
     img.save(webp_file, "webp")
 
     return webp_file
-`
+

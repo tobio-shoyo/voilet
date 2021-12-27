@@ -79,7 +79,7 @@ def sauce(update: Update, context: CallbackContext) -> None:
 
         # send message
         update.message.reply_text(
-            "Let's enjoy this together, without anybody else distracting us...",
+            text_blob,
             reply_markup=markup,
         )
 

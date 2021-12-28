@@ -112,7 +112,6 @@ def report(update, context) -> str:
             message.reply_text("I'm not gonna report myself!")
             return ""
 
-        if chat.username and chat.type == Chat.SUPERGROUP:
 
             reported = f"Reported {mention_html(reported_user.id, reported_user.first_name)} to the admins!"
 
@@ -146,12 +145,7 @@ def report(update, context) -> str:
                 ],
             ]
             reply_markup = InlineKeyboardMarkup(keyboard)
-        else:
-            reported = f"Reported {mention_html(reported_user.id, reported_user.first_name)} to the admins!"
 
-            msg = f'{mention_html(user.id, user.first_name)} is calling for admins in "{html.escape(chat_name)}"!'
-            link = ""
-            should_forward = True
 
         for admin in admin_list:
             if admin.user.is_bot:  # can't message bots

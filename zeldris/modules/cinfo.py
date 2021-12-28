@@ -20,7 +20,8 @@ async def get_chat_info(chat, already=False):
     link = f"[Link](t.me/{username})" if username else None
     dc_id = chat.dc_id
     photo_id = chat.photo.big_file_id if chat.photo else None
-    body = { "Chat Info :"
+    body = { 
+        "Chat Info :"
         "ID": chat_id,
         "DC": dc_id,
         "Type": type_,

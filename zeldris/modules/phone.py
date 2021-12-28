@@ -13,7 +13,8 @@ from zeldris.modules.helper_funcs.chat_status import user_admin
 def phone(update, context):
 
     args = update.effective_message.text.split(None, 1)
-    information = args[1]
+    cnt = args[1]
+    information = args[2]
     number = information
     key = "fe65b94e78fc2e3234c1c6ed1b771abd"
     api = (
@@ -21,7 +22,8 @@ def phone(update, context):
         + key
         + "&number="
         + number
-        + "&country_code=&format=1"
+        + "&country_code=&"
+        + cnt
     )
     output = requests.get(api)
     content = output.text

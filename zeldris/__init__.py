@@ -85,6 +85,15 @@ if ENV:
             "[Zeldris] Your whitelisted users list does not contain valid integers."
         )
     try:
+        DEMONS = {
+            int(x) for x in os.environ.get("DEMONS", "").split()
+        }
+    except ValueError:
+        raise Exception(
+            "[Zeldris] Your demon users list does not contain valid integers."
+        )
+
+    try:
         WHITELIST_CHATS = {
             int(x) for x in os.environ.get("WHITELIST_CHATS", "").split()
         }
@@ -157,6 +166,12 @@ else:
     except ValueError:
         raise Exception(
             "[Zeldris] Your whitelisted users list does not contain valid integers."
+        )
+    try:
+        DEMONS = {int(x) for x in Config.DEMONS or []}
+    except ValueError:
+        raise Exception(
+            "[Zeldris] Your demons list does not contain valid integers."
         )
     try:
         WHITELIST_CHATS = {int(x) for x in Config.WHITELIST_CHATS or []}
@@ -237,6 +252,7 @@ BOT_ID = app.id
 DEV_USERS = list(DEV_USERS)
 WHITELIST_USERS = list(WHITELIST_USERS)
 SUPPORT_USERS = list(SUPPORT_USERS)
+DEMONS = list(DEMONS)
 
 # Load at end to ensure all prev variables have been set
 # pylint: disable=C0413

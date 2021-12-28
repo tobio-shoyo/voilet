@@ -29,6 +29,7 @@ from zeldris import (
     OWNER_ID,
     DEV_USERS,
     SUPPORT_USERS,
+    DEMONS,
     WHITELIST_USERS,
     STRICT_GBAN,
     MESSAGE_DUMP,
@@ -101,6 +102,12 @@ def gban(update, context):
     if int(user_id) in DEV_USERS:
         message.reply_text(
             "I spy, with my little eye... a war of Villains! Why are you guys turning on each other?"
+        )
+        return
+
+    if int(user_id) in DEMONS:
+        message.reply_text(
+            "I spy, with my little eye... a war of Murderers! Why are you guys turning on each other?"
         )
         return
 
@@ -424,7 +431,7 @@ def __user_info__(user_id):
 
     text = "<b>Globally banned</b>: {}"
 
-    if int(user_id) in DEV_USERS + SUPPORT_USERS + WHITELIST_USERS:
+    if int(user_id) in DEV_USERS + SUPPORT_USERS + WHITELIST_USERS + DEMONS:
         return ""
     if is_gbanned:
         text = text.format("Yes")
@@ -464,18 +471,18 @@ GBAN_HANDLER = CommandHandler(
     "gban",
     gban,
     pass_args=True,
-    filters=CustomFilters.dev_filter | CustomFilters.support_filter,
+    filters=CustomFilters.dev_filter | CustomFilters.support_filter | CustomFilters.dem_filter,
 )
 UNGBAN_HANDLER = CommandHandler(
     "ungban",
     ungban,
     pass_args=True,
-    filters=CustomFilters.dev_filter | CustomFilters.support_filter,
+    filters=CustomFilters.dev_filter | CustomFilters.support_filter | CustomFilters.dem_filter,
 )
 GBAN_LIST = CommandHandler(
     "gbanlist",
     gbanlist,
-    filters=CustomFilters.dev_filter | CustomFilters.support_filter,
+    filters=CustomFilters.dev_filter | CustomFilters.support_filter | CustomFilters.dem_filter,
 )
 
 GBAN_STATUS = CommandHandler(

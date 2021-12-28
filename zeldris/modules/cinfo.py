@@ -34,7 +34,8 @@ async def get_chat_info(chat, already=False):
         "Restricted": is_restricted,
         "Description": [description],
     }
-    return [body, photo_id]
+    cpm = section("Chat info", body)
+    return [cpm, photo_id]
 
 @app.on_message(filters.command("cinfo"))
 async def chat_info_func(_, message: Message):

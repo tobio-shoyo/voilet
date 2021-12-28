@@ -57,7 +57,7 @@ async def _(event):
             downloaded_file_name = await event.client.download_media(
                 reply_message, TEMP_DOWNLOAD_DIRECTORY
             )
-            directory_name = downloaded_file_name
+            directory_name = downloaded_file_name[:-4]
         except Exception as e:  # pylint:disable=C0103,W0703
             await mone.reply(str(e))
     zipfile.ZipFile(directory_name + ".zip", "w", zipfile.ZIP_DEFLATED).write(

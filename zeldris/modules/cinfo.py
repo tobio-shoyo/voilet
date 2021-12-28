@@ -20,7 +20,7 @@ async def get_chat_info(chat, already=False):
     link = f"[Link](t.me/{username})" if username else None
     dc_id = chat.dc_id
     photo_id = chat.photo.big_file_id if chat.photo else None
-    body = {
+    body = { "Chat Info :" /n
         "ID": chat_id,
         "DC": dc_id,
         "Type": type_,
@@ -32,8 +32,7 @@ async def get_chat_info(chat, already=False):
         "Restricted": is_restricted,
         "Description": [description],
     }
-    caption = section("Chat info", body)
-    return [caption, photo_id]
+    return [body, photo_id]
 
 @app.on_message(filters.command("cinfo"))
 async def chat_info_func(_, message: Message):

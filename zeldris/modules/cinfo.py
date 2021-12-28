@@ -1,7 +1,8 @@
 from zeldris import pbot as app
 from zeldris.modules.helper_funcs.section import section
 
-from pyrogram import filters, ParseMode
+from telegram import ParseMode
+from pyrogram import filters
 from pyrogram.types import Message
 from zeldris import DEV_USERS
 

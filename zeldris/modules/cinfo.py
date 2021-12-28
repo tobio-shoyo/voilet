@@ -21,8 +21,7 @@ async def get_chat_info(chat, already=False):
     link = f"[Link](t.me/{username})" if username else None
     dc_id = chat.dc_id
     photo_id = chat.photo.big_file_id if chat.photo else None
-    body = { 
-        "Chat Info :"
+    body = {
         "ID": chat_id,
         "DC": dc_id,
         "Type": type_,
@@ -32,7 +31,7 @@ async def get_chat_info(chat, already=False):
         "Members": members,
         "Scam": is_scam,
         "Restricted": is_restricted,
-        "Description": [description],
+        "Description": [(description) if description else None],
     }
     cpm = section("Chat info", body)
     return [cpm, photo_id]

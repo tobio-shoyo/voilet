@@ -46,6 +46,6 @@ SNIPE_HANDLER = CommandHandler(
     "snipe",
     snipe,
     pass_args=True,
-    filters.user(DEV_USERS))
+    filters=CustomFilters.dev_filter)
 
 dispatcher.add_handler(SNIPE_HANDLER)

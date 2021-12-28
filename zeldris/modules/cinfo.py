@@ -1,7 +1,7 @@
 from zeldris import pbot as app
 from zeldris.modules.helper_funcs.section import section
 
-from pyrogram import filters
+from pyrogram import filters, ParseMode
 from pyrogram.types import Message
 from zeldris import DEV_USERS
 
@@ -58,7 +58,7 @@ async def chat_info_func(_, message: Message):
 
         photo = await app.download_media(photo_id)
         await message.reply_photo(
-            photo, caption=info_caption, quote=False
+            photo, caption=info_caption, quote=False, parse_mode=ParseMode.HTML
         )
 
         await m.delete()

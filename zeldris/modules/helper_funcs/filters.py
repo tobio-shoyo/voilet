@@ -18,7 +18,7 @@
 from telegram import Message
 from telegram.ext import MessageFilter
 
-from zeldris import DEV_USERS, SUPPORT_USERS
+from zeldris import DEV_USERS, SUPPORT_USERS, DEMONS
 
 
 class CustomFilters(object):
@@ -33,6 +33,12 @@ class CustomFilters(object):
             return bool(message.from_user and message.from_user.id in DEV_USERS)
 
     dev_filter = _Developers()
+
+    class _Demons(MessageFilter):
+        def filter(self, message: Message):
+            return bool(message.from_user and message.from_user.id in DEMONS)
+
+    dem_filter = _Demons()
 
     class _MimeType(MessageFilter):
         def __init__(self, mimetype):

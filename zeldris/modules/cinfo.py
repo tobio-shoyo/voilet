@@ -60,7 +60,7 @@ async def chat_info_func(_, message: Message):
 
         photo = await app.download_media(photo_id)
         await message.reply_photo(
-            photo, caption=info_caption, quote=False, parse_mode=ParseMode.HTML
+            photo, caption=info_caption, quote=False,
         )
 
         await m.delete()

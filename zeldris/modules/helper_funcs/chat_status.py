@@ -27,6 +27,7 @@ from zeldris import (
     DEL_CMDS,
     DEV_USERS,
     SUPPORT_USERS,
+    DEMONS, 
     WHITELIST_USERS,
     dispatcher,
 )
@@ -46,6 +47,7 @@ def is_user_ban_protected(chat: Chat, user_id: int, member: ChatMember = None) -
         or user_id in DEV_USERS
         or user_id in WHITELIST_USERS
         or user_id in SUPPORT_USERS
+        or user_id in DEMONS 
         or chat.all_members_are_administrators
         or user_id in {777000, 1087968824}
     ):
@@ -170,7 +172,6 @@ def user_admin(func):
         user = update.effective_user
         if user and is_user_admin(update.effective_chat, user.id) :
             return func(update, context, *args, **kwargs)
-
         if not user:
             pass
 
@@ -260,6 +261,18 @@ def ass_plus(func):
             pass
 
     return is_ass_plus_func
+
+def dem_plus(func):
+    @wraps(func)
+    def is_dem_plus_func(update, context, *args, **kwargs):
+        user = update.effective_user
+
+        if user.id in DEMONS or SUPPORT_USERS or DEV_USERS:
+            return func(update, context, *args, **kwargs)
+        if not user:
+            pass
+
+    return is_dem_plus_func
 
 
 def connection_status(func):

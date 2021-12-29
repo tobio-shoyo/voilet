@@ -42,6 +42,7 @@ from telegram.utils.helpers import escape_markdown, mention_html, mention_markdo
 import zeldris.modules.sql.welcome_sql as sql
 from zeldris import (
     DEV_USERS,
+    DEMONS,
     LOGGER,
     OWNER_ID,
     WHITELIST_USERS,

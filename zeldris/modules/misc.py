@@ -47,6 +47,7 @@ from zeldris import (
     OWNER_ID,
     DEV_USERS,
     SUPPORT_USERS,
+    DEMONS,
     WHITELIST_USERS,
     WALL_API,
     spamwtc,
@@ -161,6 +162,9 @@ def info(update, context):
     if user.id == OWNER_ID:
         text += ("\n\nThe Disaster level of this person is <b>'MONARCH'</b>.")
         disaster_level_present = True
+    elif user.id in DEMONS:
+        text += ("\n\nThe Disaster level of this person is <b>'MURDERER'</b>.")
+        disaster_level_present = True
     elif user.id in DEV_USERS:
         text += ("\n\nThis user is  the <b>'Villain'</b>.")
         disaster_level_present = True
@@ -176,7 +180,7 @@ def info(update, context):
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' [<a href="https://t.me/DABI_UPDATES/9">?</a>]'
+        text += ' [<a href="https://t.me/DABI_UPDATES/9">😈</a>]'
 
     try:
         memstatus = chat.get_member(user.id).status

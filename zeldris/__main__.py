@@ -680,9 +680,10 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(
+            dispatcher.bot.send_photo(
                 "@Villainevil_support",
-                "[I Am Alive Now!](https://telegra.ph/file/138ca9fd4e1f59501de9a.mp4)",
+                "https://telegra.ph/file/363b020f4bd4810ea35b6.jpg",
+                "I Am Alive Now!",
                 parse_mode=ParseMode.MARKDOWN,
             )
         except Unauthorized:

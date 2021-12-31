@@ -5,7 +5,7 @@ import os
 import heroku3
 import requests
 
-from zeldris import telethn as borg, HEROKU_APP_NAME, HEROKU_API_KEY, DEV_USERS
+from zeldris import client as borg, HEROKU_APP_NAME, HEROKU_API_KEY, DEV_USERS
 from zeldris.events import register
 
 heroku_api = "https://api.heroku.com"

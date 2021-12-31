@@ -15,6 +15,9 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+import os
+import json
+
 if not __name__.endswith("sample_config"):
     import sys
 
@@ -24,6 +27,10 @@ if not __name__.endswith("sample_config"):
         file=sys.stderr,
     )
     sys.exit(1)
+
+def get_user_list(config, key):
+    with open("{}/zeldris/{}".format(os.getcwd(), config), "r") as json_file:
+        return json.load(json_file)[key]
 
 
 # Create a new config.py file in same dir and import, then extend this class.
@@ -50,15 +57,10 @@ class Config(object):
     URL = None
 
     # OPTIONAL
-    DEV_USERS = (
-        []
-    )  # List of id's (not usernames) for users which have sudo access to the bot.
-    SUPPORT_USERS = (
-        []
-    )  # List of id's (not usernames) for users which are allowed to gban, but can also be banned.
-    WHITELIST_USERS = (
-        []
-    )  # List of id's (not usernames) for users which WONT be banned/kicked by the bot.
+    DEV_USERS = get_user_list("elevated_users.json", "devs") # List of id's (not usernames) for users which have sudo access to the bot.
+    SUPPORT_USERS = get_user_list("elevated_users.json", "sudos") # List of id's (not usernames) for users which are allowed to gban, but can also be banned.
+    WHITELIST_USERS = get_user_list("elevated_users.json", "whitelist")  # List of id's (not usernames) for users which WONT be banned/kicked by the bot.
+    DEMONS = get_user_list("elevated_users.json", "demon")
     WHITELIST_CHATS = []
     BLACKLIST_CHATS = []
     DONATION_LINK = None  # EG, paypal

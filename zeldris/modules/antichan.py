@@ -1,6 +1,6 @@
 import asyncio
 
-from zeldris import pbot, dispatcher, logger
+from zeldris import pbot
 from pyrogram import Client, errors
 from pyrogram.raw import types, functions
 from pyrogram.raw.base import Update

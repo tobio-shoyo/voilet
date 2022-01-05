@@ -60,3 +60,4 @@ git+https://github.com/ytdl-org/youtube-dl.git
 hentai
 heroku3
 geopy
+pySmartDL

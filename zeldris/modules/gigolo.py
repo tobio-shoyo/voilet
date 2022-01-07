@@ -3,7 +3,7 @@ from pyrogram.types import Message
 
 from zeldris import DEV_USERS, SUPPORT_USERS,pbot as app
 
-SUDOERS = list(set(DEV_USERS) + set(SUPPORT_USERS))
+SUDOERS = SUPPORT_USERS.append(DEV_USERS)
 
 __MODULE__ = "Games 🎁"
 __HELP__ = """

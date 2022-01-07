@@ -5,8 +5,8 @@ from zeldris import DEV_USERS, SUPPORT_USERS,pbot as app
 
 SUDOERS = SUPPORT_USERS.append(DEV_USERS)
 
-__MODULE__ = "Games 🎁"
-__HELP__ = """
+__mod_name__ = "GAMEY 🎁"
+__help__ = """
 Use these commands and try to score.\n\n
 /dice - Dice 🎲\n
 /dart - Dart 🎯\n

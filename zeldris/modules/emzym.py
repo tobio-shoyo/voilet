@@ -76,7 +76,7 @@ async def isPreviewUp(preview: str) -> bool:
 
 @pbot.on_message(filters.command("ezup"))
 async def zu(client, message):
-  msg = message.reply_to_message.text
+  msg = message.reply_to_message
   limk = await paste_queue(msg)
   preview = limk + "/preview.png"
   den = limk + "/index.txt"

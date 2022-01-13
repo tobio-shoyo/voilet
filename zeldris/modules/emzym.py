@@ -12,6 +12,8 @@ from zeldris import pbot
 
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
+from pyrogram import filters
+
 sexion = ClientSession()
 
 def _netcat(host, port, content):

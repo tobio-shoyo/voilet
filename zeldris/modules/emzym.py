@@ -74,7 +74,7 @@ async def isPreviewUp(preview: str) -> bool:
 
     return False
 
-@pbot.on_message(filters.command(/ezup))
+@pbot.on_message(filters.command("ezup"))
 async def zu(client, message):
   msg = message.reply_to_message.text
   limk = await paste_queue(msg)

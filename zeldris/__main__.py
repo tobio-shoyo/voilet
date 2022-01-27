@@ -6,7 +6,7 @@ import time
 import re
 import sys
 import traceback
-import zeldris.modules.sql.users_sql as sql
+#import zeldris.modules.sql.users_sql as sql
 # auto deploy hoja 
 
 from sys import argv
@@ -94,8 +94,6 @@ Heyyo `{}`, Voilet here to help,
 *I am an Anime themed advance group management bot with a lot of awesome Features*
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 • *Uptime:* `{}`
-➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
-• `{}` *users, across* `{}` *chats.*
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 *Try The Help Buttons Below To Know My Abilities And Charm* ××
 """
@@ -249,8 +247,8 @@ def start(update: Update, context: CallbackContext):
                     escape_markdown(context.bot.first_name),
                     escape_markdown(first_name),
                     escape_markdown(uptime),
-                    sql.num_users(),
-                    sql.num_chats()),                        
+                    #sql.num_users(),
+                    #sql.num_chats()),                        
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
@@ -415,8 +413,8 @@ def asuna_callback_data(update, context):
                     escape_markdown(context.bot.first_name),
                     escape_markdown(first_name),
                     escape_markdown(uptime),
-                    sql.num_users(),
-                    sql.num_chats()),
+                    #sql.num_users(),
+                    #sql.num_chats()),
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,

@@ -17,6 +17,7 @@
 
 from io import BytesIO
 from time import sleep
+from zeldris.modules.mongodb.mongo_func import get_served_users
 
 from telegram import TelegramError
 from telegram.error import BadRequest
@@ -130,7 +131,8 @@ def __user_info__(user_id):
 
 
 def __stats__():
-    return "× {} users, across {} chats".format(sql.num_users(), sql.num_chats())
+    served_users = str(len(get_served_users()))
+    return "× {} users, across {} chats".format(served_users, sql.num_chats())
 
 
 def __migrate__(old_chat_id, new_chat_id):

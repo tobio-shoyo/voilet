@@ -130,9 +130,8 @@ def __user_info__(user_id):
     return """I've seen them in <code>{}</code> chats in total.""".format(num_chats)
 
 
-def __stats__():
-    served_users = str(len(get_served_users()))
-    return "× {} users, across {} chats".format(served_users, sql.num_chats())
+def __stats__():    
+    return "× {} chats".format(sql.num_chats())
 
 
 def __migrate__(old_chat_id, new_chat_id):

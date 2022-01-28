@@ -13,12 +13,12 @@ async def is_served_user(user_id: int) -> bool:
     return True
 
 
-def get_served_users() -> list:
+async def get_served_users() -> list:
     users = usersdb.find({"user_id": {"$gt": 0}})
     if not users:
         return []
     users_list = []
-    for user in users.to_list(length=1000000000):
+    for user in await users.to_list(length=1000000000):
         users_list.append(user)
     return users_list
 

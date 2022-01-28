@@ -492,13 +492,6 @@ def support_ids(update: Update, context: CallbackContext):
             pass
     update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
 
-
-def stats(update, _):
-    update.effective_message.reply_text(
-        "Current stats:\n" + "\n".join([mod.__stats__() for mod in STATS])
-    )
-
-
 def paste(update, context):
     msg = update.effective_message
 

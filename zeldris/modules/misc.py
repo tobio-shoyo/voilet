@@ -492,6 +492,13 @@ def support_ids(update: Update, context: CallbackContext):
             pass
     update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
 
+
+def stats(update, _):
+    update.effective_message.reply_text(
+        "Current stats:\n" + "\n".join([mod.__stats__() for mod in STATS])
+    )
+
+
 def paste(update, context):
     msg = update.effective_message
 
@@ -553,6 +560,9 @@ ECHO_HANDLER = CommandHandler(
 MD_HELP_HANDLER = CommandHandler(
     "markdownhelp", markdown_help, filters=Filters.chat_type.private, run_async=True
 )
+STATS_HANDLER = CommandHandler(
+    "stats", stats, filters=Filters.user(DEV_USERS), run_async=True
+)
 GDPR_HANDLER = CommandHandler(
     "gdpr", gdpr, filters=Filters.chat_type.private, run_async=True
 )
@@ -581,6 +591,7 @@ dispatcher.add_handler(ID_HANDLER)
 dispatcher.add_handler(INFO_HANDLER)
 dispatcher.add_handler(ECHO_HANDLER)
 dispatcher.add_handler(MD_HELP_HANDLER)
+dispatcher.add_handler(STATS_HANDLER)
 dispatcher.add_handler(GDPR_HANDLER)
 dispatcher.add_handler(WIKI_HANDLER)
 dispatcher.add_handler(GETLINK_HANDLER)

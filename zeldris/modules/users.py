@@ -17,7 +17,6 @@
 
 from io import BytesIO
 from time import sleep
-from zeldris.modules.mongodb.mongo_func import get_served_users
 
 from telegram import TelegramError
 from telegram.error import BadRequest
@@ -83,7 +82,21 @@ def broadcast(update, context):
 
 
 def log_user(update, _):
-    a = 1
+    chat = update.effective_chat
+    msg = update.effective_message
+
+    sql.update_user(msg.from_user.id, msg.from_user.username, chat.id, chat.title)
+
+    if msg.reply_to_message:
+        sql.update_user(
+            msg.reply_to_message.from_user.id,
+            msg.reply_to_message.from_user.username,
+            chat.id,
+            chat.title,
+        )
+
+    if msg.forward_from:
+        sql.update_user(msg.forward_from.id, msg.forward_from.username)
 
 
 def chats(update, _):
@@ -116,8 +129,8 @@ def __user_info__(user_id):
     return """I've seen them in <code>{}</code> chats in total.""".format(num_chats)
 
 
-def __stats__():    
-    return "× USERS_COUNT users, across {} chats".format(sql.num_chats())
+def __stats__():
+    return "× {} users, across {} chats".format(sql.num_users(), sql.num_chats())
 
 
 def __migrate__(old_chat_id, new_chat_id):

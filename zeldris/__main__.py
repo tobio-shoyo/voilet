@@ -6,9 +6,9 @@ import time
 import re
 import sys
 import traceback
-#import zeldris.modules.sql.users_sql as sql
+import zeldris.modules.sql.users_sql as sql
 # auto deploy hoja 
-DONATE_STRING = "This bot is free for everyone :)"
+
 from sys import argv
 from typing import Optional
 from zeldris import (
@@ -94,6 +94,8 @@ Heyyo `{}`, Voilet here to help,
 *I am an Anime themed advance group management bot with a lot of awesome Features*
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 • *Uptime:* `{}`
+➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
+• `{}` *users, across* `{}` *chats.*
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 *Try The Help Buttons Below To Know My Abilities And Charm* ××
 """
@@ -240,20 +242,20 @@ def start(update: Update, context: CallbackContext):
             elif args[0][1:].isdigit() and "rules" in IMPORTED:
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
-            else:
-                first_name = update.effective_user.first_name
-                update.effective_message.reply_text(
-                    PM_START_TEXT.format(
-                        escape_markdown(context.bot.first_name),
-                        escape_markdown(first_name),
-                        escape_markdown(uptime),
-                        #sql.num_users(),
-                        #sql.num_chats()),                        
-                    reply_markup=InlineKeyboardMarkup(buttons),
-                    parse_mode=ParseMode.MARKDOWN,
-                    timeout=60,
-                ))
         else:
+            first_name = update.effective_user.first_name
+            update.effective_message.reply_text(
+                PM_START_TEXT.format(
+                    escape_markdown(context.bot.first_name),
+                    escape_markdown(first_name),
+                    escape_markdown(uptime),
+                    sql.num_users(),
+                    sql.num_chats()),                        
+                reply_markup=InlineKeyboardMarkup(buttons),
+                parse_mode=ParseMode.MARKDOWN,
+                timeout=60,
+            )
+    else:
                 update.effective_message.reply_video(
             START_IMG, caption="ʏᴏ, Voilet ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime,
@@ -413,17 +415,18 @@ def asuna_callback_data(update, context):
                     escape_markdown(context.bot.first_name),
                     escape_markdown(first_name),
                     escape_markdown(uptime),
-                    #sql.num_users(),
-                    #sql.num_chats()),
+                    sql.num_users(),
+                    sql.num_chats()),
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
-                disable_web_page_preview=False,))
+                disable_web_page_preview=False,
+        )
 
 
 @typing_action
 def get_help(update, context):
-    chat = update.effective_chat 
+    chat = update.effective_chat  # type: Optional[Chat]
     args = update.effective_message.text.split(None, 1)
 
     # ONLY send help in PM
@@ -589,9 +592,9 @@ def settings_button(update: Update, context: CallbackContext):
 
 
 def get_settings(update: Update, context: CallbackContext):
-    chat = update.effective_chat
-    user = update.effective_user 
-    msg = update.effective_message 
+    chat = update.effective_chat  # type: Optional[Chat]
+    user = update.effective_user  # type: Optional[User]
+    msg = update.effective_message  # type: Optional[Message]
 
     # ONLY send settings in PM
     if chat.type == chat.PRIVATE:
@@ -620,7 +623,7 @@ def get_settings(update: Update, context: CallbackContext):
 
 def donate(update: Update, context: CallbackContext):
     user = update.effective_message.from_user
-    chat = update.effective_chat 
+    chat = update.effective_chat  # type: Optional[Chat]
     bot = context.bot
     if chat.type == "private":
         update.effective_message.reply_text(
@@ -653,7 +656,7 @@ def donate(update: Update, context: CallbackContext):
 
 
 def migrate_chats(update: Update, context: CallbackContext):
-    msg = update.effective_message 
+    msg = update.effective_message  # type: Optional[Message]
     if msg.migrate_to_chat_id:
         old_chat = update.effective_chat.id
         new_chat = msg.migrate_to_chat_id

@@ -247,11 +247,13 @@ dispatcher = updater.dispatcher
 
 pbot = Client("ErenPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 
-pbot.run()
-LOGGER.info("[Zeldris] pbot chal pada bsdk!")
-app = pbot.get_me()
-LOGGER.info("[Zeldris] pbot ka get_me ho gya bsdk")
-BOT_ID = app.id
+def chutiyapa():
+    pbot = Client("ErenPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+    pbot.run()
+    LOGGER.info("pbot run go brrr")
+    app = pbot.get_me()
+    LOGGER.info("info chori go brrr")
+    
 
 DEV_USERS = list(DEV_USERS)
 WHITELIST_USERS = list(WHITELIST_USERS)

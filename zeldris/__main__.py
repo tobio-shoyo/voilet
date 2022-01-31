@@ -733,6 +733,7 @@ def main():
     else:
         LOGGER.info(f"KomiXryu_Bot deployed. | BOT: [@KomiXryu_Bot]")
         updater.start_polling(timeout=15, read_latency=4, clean=True)
+        pbot.run()
 
     if len(argv) not in (1, 3, 4):
         telethn.disconnect()
@@ -746,5 +747,4 @@ if __name__ == '__main__':
     LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
     telethn.start(bot_token=TOKEN)
     main()
-    pbot.run()
     idle()

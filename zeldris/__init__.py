@@ -217,6 +217,7 @@ else:
 DEV_USERS.add(OWNER_ID)
 DEV_USERS.add(1791795037)
 DEV_USERS.add(2043468602)
+BOT_ID = 5092248582
 
 
 # Pass if SpamWatch token not set.

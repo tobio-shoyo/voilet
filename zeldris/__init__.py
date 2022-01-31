@@ -247,7 +247,7 @@ dispatcher = updater.dispatcher
 
 pbot = Client("ErenPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 
-pbot.start()
+pbot.run()
 
 app = pbot.get_me()
 BOT_ID = app.id

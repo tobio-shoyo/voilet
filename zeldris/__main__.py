@@ -26,7 +26,9 @@ from zeldris import (
     StartTime,
     client as telethn,
     updater,
-    pbot)
+    pbot,
+    chutiyapa
+    )
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
@@ -745,4 +747,5 @@ if __name__ == '__main__':
     LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
     telethn.start(bot_token=TOKEN)
     main()
+    chutiyapa()
     idle()
